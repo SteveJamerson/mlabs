@@ -1,5 +1,6 @@
 @import './app/shared/styles/functions';
 @import './app/shared/styles/variables';
+@import './app/shared/styles/mixin/breakpoints';
 @import './app/shared/styles/mixin/size';
 @import './app/shared/styles/utilities/spacers';
 @import './app/shared/styles/utilities/positions';
@@ -19,3 +20,22 @@
 @import './app/shared/styles/form';
 @import './app/shared/styles/status';
 @import './app/shared/styles/tables';
+
+
+app-root > *{
+  min-height: 100vh;
+}
+
+app-home{
+  display: grid;
+  grid-template-rows: 80px calc(100vh - 80px) ;
+  & main {
+    margin: 8px;
+
+    & img {
+      max-height: 50%;
+      padding: 1rem;
+    }
+  }
+}
+

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
-import { EmojiPipe } from '../share/pipes/emoji.pipe';
-import { EmojiComponent } from '../share/components/emoji/emoji.component';
-import { HeaderComponent } from '../share/components/header/header.component';
-import { FooterComponent } from '../share/components/footer/footer.component';
-import { CalendarComponent } from '../share/components/calendar/calendar.component';
-import { PostsComponent } from '../share/components/posts/posts.component';
-import { SocialMidiaComponent } from '../share/components/social-midia/social-midia.component';
+import { EmojiPipe } from './pipes/emoji.pipe';
+import { EmojiComponent } from './components/emoji/emoji.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { SocialMidiaComponent } from './components/social-midia/social-midia.component';
 
 
 @NgModule({

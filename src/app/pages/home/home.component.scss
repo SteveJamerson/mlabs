@@ -1,0 +1,4 @@
+@import './../../shared/styles/utilities/positions';
+main{
+  @extend %ui-flex-center-column;
+}

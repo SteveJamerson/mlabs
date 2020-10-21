@@ -7,6 +7,9 @@
   left: 0;
   bottom: 0;
   z-index: $zindex-fixed;
+  @include breakpoints('sm') {
+    padding: 0 20px;
+  }
   &.ui-sticky{
     position: sticky;
     z-index: $zindex-sticky;

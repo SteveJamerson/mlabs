@@ -3,6 +3,9 @@
   @extend %ui-flex-between;
   background: $white;
   padding: 16px 40px;
+  @include breakpoints('sm') {
+    padding: 0 20px;
+  }
   &.ui-sticky{
     position: sticky;
     left: 0;

@@ -45,6 +45,13 @@
   &-lg {
     height: $bottom-width * 4.5;
     min-width: 184px;
+    @include breakpoints('sm') {
+      height: $bottom-width * 3.6;
+      min-width: 109px;
+    }
+  }
+  &-full {
+    width: 100%
   }
 
   &-icon{
