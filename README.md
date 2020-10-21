@@ -28,12 +28,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - [x] modules
   - [x] core
   - [x] shared
-- [ ] Dependencias
-  - [ ] Font Awesome
-  - [ ] PopperJS
-  - [ ] DatePicker Jquery
-- [ ] assets
-  - [ ] images
+- [x] Dependencias
+  - [x] Font Awesome
+  - [x] PopperJS
+  - [x] DatePicker Jquery
+  - [x] ngx-mask
+- [x] assets
+  - [x] images
 - [ ] styles
   - [ ] variables
   - [ ] restart

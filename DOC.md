@@ -6,17 +6,28 @@ ng new mLabs
 
 - [x] modules
   - [x] core
-
-ng g m core/core --flat
+1. ng g m core/core --flat
+2. import e export browserModule para appModule
 
   - [x] shared
+1. ng g m core/core --flat
+2. import e export components e pipes 
 
-ng g m core/core --flat
+- [x] Dependencias
+  - [x] Font Awesome
+1. npm i @fortawesome/fontawesome-free
+2. adicionado angular.json styles 
 
-- [ ] Dependencias
-  - [ ] Font Awesome
-  - [ ] PopperJS
-  - [ ] DatePicker Jquery
+  - [x] PopperJS
+1. npm i @popperjs/core
+
+  - [x] DatePicker Jquery
+1. CDN 
+
+  - [x] ngx-mask
+1. npm i ngx-mask
+2. adicionado ao shared
+
 - [ ] assets
   - [ ] images
 - [ ] styles
