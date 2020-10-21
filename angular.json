@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mlabs"
+    }
+  },
+  "defaultProject": "mlabs",
+  "cli": {
+    "analytics": "f0ff43e6-aa5a-40b5-b3da-3e5c5042723f"
+  }
 }
