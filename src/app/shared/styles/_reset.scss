@@ -35,6 +35,10 @@ p, label {
   margin-bottom: .5rem;
 }
 
+small {
+  font-size: 70%;
+}
+
 a, .link {
   color: $link-color;
   text-decoration: $link-decoration;

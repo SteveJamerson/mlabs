@@ -1,0 +1,21 @@
+$types-spacers: margin, padding;
+$directions: top, bottom, left, right;
+
+@each $type in $types-spacers {
+  @each $spacer, $value in $multiples-spacers {
+    .ui-#{$type}-x-#{$spacer} {
+      #{$type}: #{$value} 0rem;
+    }
+    .ui-#{$type}-y-#{$spacer} {
+      #{$type}: 0rem #{$value};
+    }
+    .ui-#{$type}-#{$spacer} {
+      #{$type}: #{$value};
+    }
+    @each $direction in $directions {
+      .ui-#{$type}-#{$direction}-#{$spacer} {
+        #{$type}-#{$direction}: #{$value};
+      }
+    }
+  }
+}

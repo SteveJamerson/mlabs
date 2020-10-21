@@ -1,0 +1,13 @@
+.ui-avatar {
+  @extend .ui-flex-between;
+  width: fit-content;
+  &-img {
+    @include size(45px);
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+  &__content{
+    margin-left: 16px;
+    @extend .ui-display-flex, .ui-flex-direction-column;
+  }
+}

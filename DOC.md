@@ -38,9 +38,10 @@ ng new mLabs
   - [x] variables
   - [x] restart
   - [x] functions
-  - [ ] mixin
+  - [ ] utilities
     - [ ] spacers
     - [ ] positions
+    - [ ] text
   - [ ] atoms
     - [ ] avatar
     - [ ] buttons
