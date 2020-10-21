@@ -47,4 +47,48 @@
   <button class="ui-button-icon ui-brands-instagram-gradient"><i class="fab fa-instagram"></i></button>
   <button class="ui-button-icon ui-button-icon-lg ui-brands-linkedin-gradient"><i class="fab fa-linkedin-in"></i></button>
   <br><br>
+  <input type="text" class="ui-form">
+  <br>
+  <div class="ui-form-icon">
+    <input type="text" class="ui-form">
+    <i class="fas fa-times"></i>
+  </div>
+  <br><br>
+  <div class="ui-upload-image">
+    <label for="upload-file" class="ui-upload-image__label">
+      <i class="fas fa-cloud-upload-alt"></i>
+      <span
+        >{{
+          image != ""
+            ? image
+            : "Arraste e solte uma imagem aqui ou clique no botão abaixo"
+        }}
+      </span>
+      <button class="ui-button ui-button-primary-outline ui-button-sm">
+        Pesquisar imagens
+      </button>
+    </label>
+    <input
+      type="file"
+      accept="image/jpg,image/png"
+      id="upload-file"
+    />
+  </div>
+  <br><br>
+  <div class="ui-text-post">
+    <textarea
+      #text
+      type="text"
+      class="ui-form"
+      placeholder="Aqui vai o texto descritivo desse post"
+    ></textarea>
+    <button class="ui-button" id="buttonEmoji" ><i class="far fa-smile"></i></button>
+  </div>
+  <br><br>
+
+  <p class="ui-status ui-status-positive"> Postado </p>
+  <p class="ui-status ui-status-success"> Agendado </p>
+  <p class="ui-status ui-status-warn"> Postado com ressalvas </p>
+  <p class="ui-status ui-status-alert"> Não aprovado </p>
+  <br><br>
 </router-outlet>

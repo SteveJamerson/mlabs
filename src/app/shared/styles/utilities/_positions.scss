@@ -1,3 +1,10 @@
+.directions-zero {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .ui-position-absolute { position: absolute; }
 .ui-position-relative { position: relative; }
 .ui-position-fixed { position: fixed; }
@@ -28,4 +35,15 @@
 
 .ui-flex-center { @extend .ui-display-flex, .ui-flex-align-items-center, .ui-flex-justify-content-center; }
 
+.ui-flex-center-column { @extend .ui-flex-center, .ui-flex-direction-column }
+
 .ui-flex-between { @extend .ui-display-flex, .ui-flex-align-items-center, .ui-flex-justify-content-space-between; }
+
+.ui-absolute-total {
+  @extend .ui-position-absolute, .directions-zero
+}
+
+.ui-fixed-total {
+  position: fixed;
+  @extend .ui-position-fixed, .directions-zero
+}

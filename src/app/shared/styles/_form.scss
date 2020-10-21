@@ -1,0 +1,74 @@
+input[type="date"],
+input[type="time"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+.ui-form {
+  display: block;
+  @include size(41px, 100%);
+  padding: .5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: $input-line-height;
+  color: $gray-800;
+  background-color: transparent;
+  border: $border-width solid $gray-800;
+  border-radius: .25rem;
+  &::placeholder {
+    color: $gray-400;
+  }
+}
+
+.ui-text-post, .ui-form-icon {
+  width: 100%;
+  position: relative;
+  & .ui-form {
+    height: auto;
+    & + button, & + i{
+      min-width: inherit;
+      position: absolute;
+      @include size(fit-content);
+      top: .75rem;
+      right: .5rem;
+    }
+    & + i {
+      left: .75rem;
+      right: inherit;
+    }
+    &[type="text"]{
+      padding-left: 2rem;
+    }
+  }
+}
+
+.ui-upload-image {
+  width: 100%;
+  position: relative;
+    & input {
+      @extend .ui-absolute-total;
+      width: 100%;
+      opacity: 0;
+      -webkit-appearance: none;
+    }
+    & i {
+      font-size: 30px;
+    }
+    & label.ui-upload-image__label {
+      padding: 21px;
+      background: $white;
+      border: $border-width dashed $gray-400;
+      border-radius: $border-radius;
+      color: $gray-700;
+      @extend .ui-flex-center-column;
+      & > * {
+        pointer-events: none;
+        & + * {
+          margin-top: 8px;
+        }
+      }
+    }
+}

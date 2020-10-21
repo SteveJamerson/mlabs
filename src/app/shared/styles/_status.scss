@@ -1,0 +1,21 @@
+.ui-status {
+  display: inline-block;
+  position: relative;
+  color: $gray-700;
+  font-size: $font-size - 2px;
+  line-height: $text-line-height;
+  padding-left: 1rem;
+}
+
+@each $color, $value in $sinais-colors {
+  .ui-status-#{$color}::before{
+    content: '';
+    display: block;
+    position: absolute;
+    @include size(12px);
+    left: 0;
+    top: 4px;
+    background: $value;
+    border-radius: 50%;
+  }
+}
