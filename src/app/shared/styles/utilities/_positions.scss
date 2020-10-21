@@ -33,6 +33,8 @@
 .ui-flex-justify-content-space-around { justify-content: space-around; }
 .ui-flex-justify-content-space-between { justify-content: space-between; }
 
+.ui-flex-end { @extend .ui-display-flex, .ui-flex-align-items-center, .ui-flex-justify-content-flex-end; }
+
 .ui-flex-center { @extend .ui-display-flex, .ui-flex-align-items-center, .ui-flex-justify-content-center; }
 
 .ui-flex-center-column { @extend .ui-flex-center, .ui-flex-direction-column }

@@ -1,0 +1,42 @@
+.ui-modal {
+  @extend .ui-fixed-total;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  background-color: rgba($black,.25);
+  &__content {
+    display: block;
+    z-index: 1100;
+    width: 872px;
+    background: #FAFAFA;
+    padding: 16px;
+    border-radius: $border-radius;
+    margin: auto;
+    text-align: center;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      margin: auto 1rem;
+      height: fit-content;
+    }
+  }
+  &__header{
+    font-size: 30px;
+    margin: 0;
+  }
+  &__body{
+    @extend .ui-flex-center-column;
+    margin: 1rem 0;
+    font-size: 24px;
+  }
+  &__footer{
+    font-size: 30px;
+    margin: 0;
+  }
+  &.show {
+    display: flex;
+  }
+}
+
+body.modal {
+  overflow: hidden;
+}

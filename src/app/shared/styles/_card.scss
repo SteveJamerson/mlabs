@@ -1,0 +1,18 @@
+.ui-card {
+  display: block;
+  @include size(auto, 100%);
+  background: $white;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  margin-bottom: 8px;
+  & > * {
+    padding: 10px;
+  }
+  &__header{
+    border-bottom: $border-width solid $gray-200;
+    margin: 0;
+  }
+  &__body, &__footer{
+    @extend .ui-flex-center;
+  }
+}

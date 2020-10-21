@@ -1,0 +1,6 @@
+.ui-footer{
+  @include size(67px, 100%);
+  @extend .ui-flex-end;
+  background: $white;
+  padding: 10px 52px;
+}

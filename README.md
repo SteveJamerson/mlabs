@@ -54,11 +54,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
     - [x] status
     - [x] scroll
     - [x] table
-  - [ ] molecules
-    - [ ] modal
-    - [ ] card
-    - [ ] header
-    - [ ] footer
+  - [x] molecules
+    - [x] modal
+    - [x] card
+    - [x] header
+    - [x] footer
   - [ ] organims
     - [ ] scroll post
     - [ ] post preview

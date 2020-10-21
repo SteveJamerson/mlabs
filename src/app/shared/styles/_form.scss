@@ -1,11 +1,11 @@
-input[type="date"],
-input[type="time"] {
-  &::-webkit-inner-spin-button,
-  &::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-  }
-}
+// input[type="date"],
+// input[type="time"] {
+//   &::-webkit-inner-spin-button,
+//   &::-webkit-calendar-picker-indicator {
+//     display: none;
+//     -webkit-appearance: none;
+//   }
+// }
 
 .ui-form {
   display: block;
@@ -20,6 +20,9 @@ input[type="time"] {
   border-radius: .25rem;
   &::placeholder {
     color: $gray-400;
+  }
+  & + .ui-form{
+    margin-left: 1rem;
   }
 }
 
@@ -39,7 +42,7 @@ input[type="time"] {
       left: .75rem;
       right: inherit;
     }
-    &[type="text"]{
+    &[type="text"]:not(textarea){
       padding-left: 2rem;
     }
   }
