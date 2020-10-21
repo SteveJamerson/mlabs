@@ -28,16 +28,21 @@ ng new mLabs
 1. npm i ngx-mask
 2. adicionado ao shared
 
-- [ ] assets
-  - [ ] images
+- [x] assets
+  - [x] images
+1. salvo imagens em assets
+
 - [ ] styles
-  - [ ] variables
-  - [ ] restart
-  - [ ] functions
+1. Pasta criando em Shared
+2. Todos os arquivos serão adicionados styles.scss
+  - [x] variables
+  - [x] restart
+  - [x] functions
   - [ ] mixin
     - [ ] spacers
     - [ ] positions
   - [ ] atoms
+    - [ ] avatar
     - [ ] buttons
     - [ ] buttons-icon
     - [ ] inputs

@@ -36,13 +36,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - [x] assets
   - [x] images
 - [ ] styles
-  - [ ] variables
-  - [ ] restart
-  - [ ] functions
+  - [x] variables
+  - [x] restart
+  - [x] functions
   - [ ] mixin
     - [ ] spacers
     - [ ] positions
   - [ ] atoms
+    - [ ] avatar
     - [ ] buttons
     - [ ] buttons-icon
     - [ ] inputs

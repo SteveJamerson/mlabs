@@ -1,0 +1,169 @@
+//COLORS
+
+$white: #FFFFFF;
+$black: #000000;
+$blue: #2F80ED;
+$blue-light: #17a6fc;
+$blue-dark:  #172B4D;
+$orange: #F2994A;
+$orange-light: #E0A22B;
+$orange-dark: #E0812C;
+$pink: #EF2EA2;
+$red: #E02B4B;
+$success: #2F80ED;
+$positive: #27AE60;
+$warn: #F2C94C;
+$alert: #EB5757;
+$gray-100: #E5E5E5;
+$gray-200: #E0E0E0;
+$gray-300: #DDDDDD;
+$gray-400: #BDBDBD;
+$gray-500: #989898;
+$gray-600: #949494;
+$gray-700: #828282;
+$gray-800: #4F4F4F;
+$gray-900: #333333;
+
+$colors: ();
+$colors: map-merge(("blue": $blue,
+    "orange": $orange,
+    "red": $red),
+  $colors);
+
+$primary: $blue;
+$secondary: $orange;
+
+$theme-colors: ();
+$theme-colors: map-merge(("primary": $blue,
+    "secondary": $orange,
+  ),
+  $theme-colors);
+
+$sinais-colors: ();
+$sinais-colors: map-merge((
+  'positive': $positive,
+  'success': $success,
+  'warn': $warn,
+  'alert': $alert
+),$sinais-colors);
+
+$grays: ();
+$grays: map-merge(("gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700,
+    "gray-800": $gray-800,
+    "gray-900": $gray-900,
+  ),
+  $grays);
+
+
+//ICONS
+$icon-bg: #FFF3E0;
+$icon-bg-gradient: linear-gradient(135deg, #EF9F2E 25%, #E02B4B 105.56%);
+$icon-size: 16px;
+$icon-size-sm: $icon-size * .75;
+$icon-size-lg: $icon-size * 1.5;
+$icon-size-xl: $icon-size * 2.75;
+
+//BRANDS
+$brands: instagram,
+linkedin,
+youtube,
+pinterest,
+twitter,
+facebook;
+
+$brands-color: ();
+$brands-color: map-merge(("instagram":#D60F86,
+    "linkedin":#3A70DA,
+    "youtube":#ff0000,
+    "pinterest":#c51f27,
+    "twitter":#2aa9e0,
+    "facebook":#0166e1,
+  ),
+  $brands-color);
+
+$brands-bg: ();
+$brands-bg: map-merge(("instagram": linear-gradient(187.5deg, #EF2EA2 5.81%, #E0A22B 109.34%),
+    "linkedin":#3A70DA,
+    "youtube":#ff0000,
+    "pinterest":#c51f27,
+    "twitter":#2aa9e0,
+    "facebook": linear-gradient(200deg, #17a6fc 5.81%, #0166e1 109.34%),
+  ),
+  $brands-bg);
+
+:root {
+
+  @each $color,
+  $value in $colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color,
+  $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color,
+  $value in $grays {
+    --#{$color}: #{$value};
+  }
+
+  @each $color,
+  $value in $brands-color {
+    --#{$color}: #{$value};
+  }
+
+  @each $color,
+  $value in $brands-bg {
+    --#{$color}: #{$value};
+  }
+}
+
+$theme-size: 10px;
+
+$body-color: $gray-900;
+$body-bg: $gray-100;
+
+$text-dark: $black;
+$text-light: $white;
+
+$font-size: 16px;
+$font-weight: 500;
+$font-family: Poppins,
+Roboto,
+'Segoe UI',
+Tahoma,
+sans-serif;
+
+$input-line-height: 1.5;
+$text-line-height: 21px;
+
+$link-color: $blue;
+$link-decoration: none;
+$link-color--hover: darken($blue, 20%);
+$link-decoration--hover: underline;
+
+$button-line-height: 24px;
+$bottom-width: $theme-size;
+$border-width: 1px;
+$border-radius: 4px;
+
+$multiples-spacer: $theme-size !default;
+$multiples-spacers: () !default;
+
+$multiples-spacers: map-merge((0: 0,
+    1: ($multiples-spacer * .4),
+    2: ($multiples-spacer * .6),
+    3: ($multiples-spacer * .8),
+    4: ($multiples-spacer * 1.6),
+    5: ($multiples-spacer * 2.4),
+    6: ($multiples-spacer * 3.6),
+  ),
+  $multiples-spacers);
+
