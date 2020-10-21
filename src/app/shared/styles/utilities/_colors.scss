@@ -8,9 +8,15 @@
 }
 
 @each $brands, $value in $brands-color {
-  .ui-brand-#{$brands} {
-    color: $value;
+  .ui-brands-#{$brands} {
+    color: $value!important;
+    border-color: $value!important;
     &-bg {
+      border-color: $value!important;
+      background-color: $value!important;
+    }
+    &-gradient {
+      border-color: $value!important;
       background: map-get($brands-bg, $brands);
     }
   }
@@ -22,6 +28,19 @@
     &-bg {
       background-color: $value;
     }
+  }
+}
+
+.ui-gradient-bg {
+  &:hover {
+    background: color-adjust($orange, 13, 90, 150);
+    border: $border-width solid color-adjust($orange, -3, 6, -18);
+    color: color-adjust($orange, -3, 6, -18);
+  }
+  &:active, &.actived {
+    border: $border-width solid color-adjust($orange, -3, 6, -18);
+    background: $icon-bg-gradient;
+    color: $white;
   }
 }
 

@@ -47,6 +47,24 @@
     min-width: 184px;
   }
 
+  &-icon{
+    @include size($bottom-width * 3.3);
+    display: inline-block;
+    padding: 0;
+    color: $gray-500;
+    border: $border-width solid $gray-400;
+    border-radius: 50%;
+    font-size: $font-size;
+    vertical-align: text-bottom;
+    &-lg {
+      @include size($bottom-width * 4);
+      font-size: $font-size-lg;
+    }
+    &[class*="ui-brand"] {
+      color: $white;
+    }
+  }
+
   @each $color,
   $value in $theme-colors {
     &-#{$color}-outline {
@@ -54,5 +72,11 @@
       border-color: $value;
       color: $value;
     }
+  }
+}
+
+[class*="ui-button"] {
+  &+[class*="ui-button"] {
+    margin-left: 15px;
   }
 }

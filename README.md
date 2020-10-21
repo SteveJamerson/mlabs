@@ -49,7 +49,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - [ ] atoms
     - [x] avatar
     - [x] buttons
-    - [ ] buttons-icon
+    - [x] buttons-icon
     - [ ] inputs
     - [ ] status
     - [ ] scroll

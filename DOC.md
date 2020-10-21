@@ -46,7 +46,7 @@ ng new mLabs
   - [ ] atoms
     - [x] avatar
     - [x] buttons
-    - [ ] buttons-icon
+    - [x] buttons-icon
     - [ ] inputs
     - [ ] status
     - [ ] scroll
