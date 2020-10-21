@@ -4,7 +4,7 @@ $white: #FFFFFF;
 $black: #000000;
 $blue: #2F80ED;
 $blue-light: #17a6fc;
-$blue-dark:  #172B4D;
+$blue-dark: #172B4D;
 $orange: #F2994A;
 $orange-light: #E0A22B;
 $orange-dark: #E0812C;
@@ -25,10 +25,31 @@ $gray-800: #4F4F4F;
 $gray-900: #333333;
 
 $colors: ();
-$colors: map-merge(("blue": $blue,
-    "orange": $orange,
-    "red": $red),
-  $colors);
+$colors: map-merge(
+  ('white': $white,
+    'black':$black,
+    'blue':$blue,
+    'blue-light':$blue-light,
+    'blue-dark':$blue-dark,
+    'orange':$orange,
+    'orange-light':$orange-light,
+    'orange-dark':$orange-dark,
+    'pink':$pink,
+    'red':$red,
+    'success':$success,
+    'positive':$positive,
+    'warn':$warn,
+    'alert':$alert,
+    'gray-1':$gray-100,
+    'gray-2':$gray-200,
+    'gray-3':$gray-300,
+    'gray-4':$gray-400,
+    'gray-5':$gray-500,
+    'gray-6':$gray-600,
+    'gray-7':$gray-700,
+    'gray-8':$gray-800,
+    'gray-9':$gray-900,
+  ), $colors);
 
 $primary: $blue;
 $secondary: $orange;
@@ -40,12 +61,10 @@ $theme-colors: map-merge(("primary": $blue,
   $theme-colors);
 
 $sinais-colors: ();
-$sinais-colors: map-merge((
-  'positive': $positive,
-  'success': $success,
-  'warn': $warn,
-  'alert': $alert
-),$sinais-colors);
+$sinais-colors: map-merge(('positive': $positive,
+    'success': $success,
+    'warn': $warn,
+    'alert': $alert), $sinais-colors);
 
 $grays: ();
 $grays: map-merge(("gray-100": $gray-100,
@@ -166,4 +185,3 @@ $multiples-spacers: map-merge((0: 0,
     6: ($multiples-spacer * 3.6),
   ),
   $multiples-spacers);
-

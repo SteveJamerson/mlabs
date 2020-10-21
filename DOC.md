@@ -38,13 +38,14 @@ ng new mLabs
   - [x] variables
   - [x] restart
   - [x] functions
-  - [ ] utilities
-    - [ ] spacers
-    - [ ] positions
-    - [ ] text
+  - [x] utilities
+    - [x] spacers
+    - [x] positions
+    - [x] text
+    - [x] colors
   - [ ] atoms
-    - [ ] avatar
-    - [ ] buttons
+    - [x] avatar
+    - [x] buttons
     - [ ] buttons-icon
     - [ ] inputs
     - [ ] status

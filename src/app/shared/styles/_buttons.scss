@@ -1,0 +1,58 @@
+.ui-button {
+  display: inline-block;
+  @include size(($bottom-width * 4), fit-content);
+  line-height: $button-line-height;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  vertical-align: middle;
+  user-select: none;
+  color: $body-color;
+  background-color: transparent;
+  border: $border-width solid transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  &:disabled {
+    background: $gray-200 !important;
+    border-color: $gray-400 !important;
+  }
+  &-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: color-contrast($primary);
+  }
+  &-secondary {
+    background-color: $secondary;
+    border-color: color-adjust($secondary, -18, -24, -30);
+    color: $white;
+  }
+  &-tertiary {
+    font-weight: $font-weight;
+    color: $link-color;
+    text-decoration: $link-decoration;
+  }
+
+  &-xs {
+    line-height: $font-size * .75;
+    min-width: 90px;
+  }
+
+  &-sm {
+    height: $bottom-width * 3.6;
+    min-width: 181px;
+  }
+
+  &-lg {
+    height: $bottom-width * 4.5;
+    min-width: 184px;
+  }
+
+  @each $color,
+  $value in $theme-colors {
+    &-#{$color}-outline {
+      background-color: $white;
+      border-color: $value;
+      color: $value;
+    }
+  }
+}

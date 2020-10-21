@@ -1,0 +1,27 @@
+@each $color, $value in $colors {
+  .ui-text-#{$color} {
+    color: $value;
+  }
+  .ui-bg-#{$color} {
+    color: $value;
+  }
+}
+
+@each $brands, $value in $brands-color {
+  .ui-brand-#{$brands} {
+    color: $value;
+    &-bg {
+      background: map-get($brands-bg, $brands);
+    }
+  }
+}
+
+@each $sinais, $value in $sinais-colors {
+  .ui-sinais-#{$sinais} {
+    color: $value;
+    &-bg {
+      background-color: $value;
+    }
+  }
+}
+
