@@ -1,4 +1,6 @@
 <router-outlet>
+
+  <app-header></app-header>
   <div class="ui-avatar">
     <img src="./../assets/images/photo.png" alt="" class="ui-avatar-img" />
     <div class="ui-avatar__content">
@@ -205,7 +207,7 @@
     </div>
   </div>
   <br /><br />
-  <div class="ui-header">
+  <!-- <div class="ui-header">
     <img src="./../assets/images/mlabs.png" alt="" />
     <div class="ui-avatar">
       <img src="./../assets/images/photo.png" alt="" class="ui-avatar-img" />
@@ -222,7 +224,7 @@
       Footer
     </button>
     <button class="ui-button ui-button-primary ui-button-lg">Footer</button>
-  </div>
+  </div> -->
   <br /><br />
   <div class="ui-card" id="">
     <div class="ui-card__header">
@@ -271,8 +273,8 @@
       <label for="">Card</label>
     </div>
     <div class="ui-card__body">
-      <input type="date" class="ui-form">
-      <input type="time" class="ui-form">
+      <input type="date" class="ui-form" />
+      <input type="time" class="ui-form" />
     </div>
   </div>
 
@@ -281,16 +283,18 @@
       <label for="">Card</label>
     </div>
     <div class="ui-card__body ui-flex-direction-column ui-text-center">
-      <label>Aguardando conteúdo. Informe os canais e as mídias desejadas para visualização.</label>
-      <img src="./../assets/images/post-preview-none.png" alt="">
+      <label
+        >Aguardando conteúdo. Informe os canais e as mídias desejadas para
+        visualização.</label
+      >
+      <img src="./../assets/images/post-preview-none.png" alt="" />
     </div>
   </div>
 
-  <br><br>
+  <br /><br />
   <div class="ui-modal" id="modal">
     <div class="ui-modal__content">
-      <div class="ui-modal__header">
-      </div>
+      <div class="ui-modal__header"></div>
       <div class="ui-modal__body">
         <img
           src="./../assets/images/Screenshot from 2020-09-11 13-17-02 1.png"
@@ -303,4 +307,8 @@
       </div>
     </div>
   </div>
+  <br /><br />
+  <app-emoji id="emoji"></app-emoji>
+  <br><br>
+  <app-footer></app-footer>
 </router-outlet>

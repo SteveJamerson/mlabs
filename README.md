@@ -33,6 +33,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - [x] PopperJS
   - [x] DatePicker Jquery
   - [x] ngx-mask
+  - [x] twemoji
 - [x] assets
   - [x] images
 - [ ] styles
@@ -65,9 +66,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
     - [ ] social midia
 - [ ] components 2
   - [ ] calender
-  - [ ] emoji
-  - [ ] header
-  - [ ] footer
+  - [x] emoji
+  - [x] header
+  - [x] footer
   - [ ] scroll post
   - [ ] post preview
   - [ ] social midia

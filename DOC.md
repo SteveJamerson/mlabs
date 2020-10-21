@@ -62,7 +62,10 @@ ng new mLabs
     - [ ] social midia
 - [ ] components 2
   - [ ] calender
-  - [ ] emoji
+  - [x] emoji
+1. ng g pipe share/pipe/emoji
+2. ng g c share/components/emoji
+3. import e export shared
   - [ ] header
   - [ ] footer
   - [ ] scroll post

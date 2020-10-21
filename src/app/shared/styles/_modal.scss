@@ -3,10 +3,11 @@
   overflow-x: hidden;
   overflow-y: auto;
   display: none;
+  z-index: $zindex-modal-bg;
   background-color: rgba($black,.25);
   &__content {
     display: block;
-    z-index: 1100;
+    z-index: $zindex-modal;
     width: 872px;
     background: #FAFAFA;
     padding: 16px;

@@ -1,0 +1,42 @@
+app-emoji {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 0px;
+  right: auto;
+  bottom: auto;
+
+  &::before{
+    content: "";
+    @include size(2rem);
+    transform: rotate(45deg);
+    background: $white;
+    position: relative;
+    margin: auto;
+    display: block;
+    top: 1rem;
+    border-top: $border-width solid $gray-800;
+    border-left: $border-width solid $gray-800;
+  }
+}
+
+.emoji {
+  height: $icon-size;
+  width: $icon-size;
+  cursor: pointer;
+  &-group{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    @include size(auto, 166px);
+    font-size: 14px;
+    background-color: #FFF;
+    padding: .5rem;
+    text-align: center;
+    justify-content: space-around;
+    border: $border-width solid $gray-800;
+    border-radius: $border-radius;
+    & > div {
+      z-index: 1;
+    }
+  }
+}

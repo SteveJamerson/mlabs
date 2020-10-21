@@ -25,8 +25,7 @@ $gray-800: #4F4F4F;
 $gray-900: #333333;
 
 $colors: ();
-$colors: map-merge(
-  ('white': $white,
+$colors: map-merge(('white': $white,
     'black':$black,
     'blue':$blue,
     'blue-light':$blue-light,
@@ -146,6 +145,14 @@ $brands-bg: map-merge(("instagram": linear-gradient(187.5deg, #EF2EA2 5.81%, #E0
 
 $theme-size: 10px;
 
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-bg: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
 $body-color: $gray-900;
 $body-bg: $gray-100;
 
@@ -174,8 +181,8 @@ $bottom-width: $theme-size;
 $border-width: 1px;
 $border-radius: 4px;
 
-$multiples-spacer: $theme-size !default;
-$multiples-spacers: () !default;
+$multiples-spacer: $theme-size;
+$multiples-spacers: ();
 
 $multiples-spacers: map-merge((0: 0,
     1: ($multiples-spacer * .4),

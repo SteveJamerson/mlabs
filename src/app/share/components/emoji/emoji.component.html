@@ -1,0 +1,7 @@
+<div class="emoji-group">
+  <div
+    *ngFor="let emoji of emojis"
+    (click)="select($event, emoji)"
+    [innerHTML]="emoji | emoji"
+  ></div>
+</div>

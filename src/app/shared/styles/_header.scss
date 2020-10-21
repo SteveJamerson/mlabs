@@ -3,4 +3,10 @@
   @extend .ui-flex-between;
   background: $white;
   padding: 16px 40px;
+  &.ui-sticky{
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
 }
