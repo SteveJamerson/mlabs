@@ -1,0 +1,22 @@
+.ui-scroll {
+  @include size(auto, 100%);
+  &__content {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    outline: none;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  &__item{
+    flex: none;
+    @include size(auto, 60%);
+    pointer-events: none;
+    margin-right: 20px;
+    scroll-snap-align: start;
+  }
+}

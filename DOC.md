@@ -43,14 +43,14 @@ ng new mLabs
     - [x] positions
     - [x] text
     - [x] colors
-  - [ ] atoms
+  - [x] atoms
     - [x] avatar
     - [x] buttons
     - [x] buttons-icon
     - [x] inputs
     - [x] status
-    - [ ] scroll
-    - [ ] table
+    - [x] scroll
+    - [x] table
   - [ ] molecules
     - [ ] modal
     - [ ] card
