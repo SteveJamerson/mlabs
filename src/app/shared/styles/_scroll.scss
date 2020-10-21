@@ -2,7 +2,8 @@
   @include size(auto, 100%);
   &__content {
     display: flex;
-    overflow-x: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
@@ -14,9 +15,24 @@
   }
   &__item{
     flex: none;
-    @include size(auto, 60%);
+    @include size(auto);
     pointer-events: none;
     margin-right: 20px;
     scroll-snap-align: start;
   }
 }
+
+
+// @media screen and (max-width: 772px) {
+//   .ui-scroll {
+//     // @extend %ui-absolute-total;
+
+//     &__content {
+//       flex-direction: column;
+//       align-items: center;
+//     }
+//     &__item{
+//       margin-right: auto;
+//     }
+//   }
+// }

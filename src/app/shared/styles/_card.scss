@@ -13,6 +13,6 @@
     margin: 0;
   }
   &__body, &__footer{
-    @extend .ui-flex-center;
+    @extend %ui-flex-center;
   }
 }

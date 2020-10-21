@@ -1,6 +1,6 @@
 .ui-header{
   @include size(80px, 100%);
-  @extend .ui-flex-between;
+  @extend %ui-flex-between;
   background: $white;
   padding: 16px 40px;
   &.ui-sticky{

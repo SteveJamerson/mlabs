@@ -1,5 +1,5 @@
 .ui-avatar {
-  @extend .ui-flex-between;
+  @extend %ui-flex-between;
   width: fit-content;
   &-img {
     @include size(45px);
@@ -8,6 +8,6 @@
   }
   &__content{
     margin-left: 16px;
-    @extend .ui-display-flex, .ui-flex-direction-column;
+    @extend %ui-display-flex, %ui-flex-direction-column;
   }
 }

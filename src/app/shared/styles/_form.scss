@@ -52,7 +52,7 @@
   width: 100%;
   position: relative;
     & input {
-      @extend .ui-absolute-total;
+      @extend %ui-absolute-total;
       width: 100%;
       opacity: 0;
       -webkit-appearance: none;
@@ -66,7 +66,7 @@
       border: $border-width dashed $gray-400;
       border-radius: $border-radius;
       color: $gray-700;
-      @extend .ui-flex-center-column;
+      @extend %ui-flex-center-column;
       & > * {
         pointer-events: none;
         & + * {

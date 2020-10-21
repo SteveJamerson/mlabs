@@ -36,7 +36,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - [x] twemoji
 - [x] assets
   - [x] images
-- [ ] styles
+- [x] styles
   - [x] variables
   - [x] restart
   - [x] functions
@@ -60,18 +60,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
     - [x] card
     - [x] header
     - [x] footer
-  - [ ] organims
-    - [ ] scroll post
-    - [ ] post preview
-    - [ ] social midia
-- [ ] components 2
-  - [ ] calender
+  - [x] organims
+    - [x] scroll post
+- [x] components
+  - [x] calendar
   - [x] emoji
   - [x] header
   - [x] footer
-  - [ ] scroll post
-  - [ ] post preview
-  - [ ] social midia
+  - [x] post
+  - [x] social midia
 - [ ] pages
   - [ ] home
   - [ ] scheduling

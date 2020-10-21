@@ -1,40 +1,31 @@
 ## Tasks
 
 - [x] init
-
-ng new mLabs
-
+  - ng new mLabs
 - [x] modules
   - [x] core
-1. ng g m core/core --flat
-2. import e export browserModule para appModule
-
+    - ng g m core/core --flat
+    -  import e export browserModule para appModule
   - [x] shared
-1. ng g m core/core --flat
-2. import e export components e pipes 
-
+    - ng g m core/core --flat
+    -  import e export components e pipes 
 - [x] Dependencias
   - [x] Font Awesome
-1. npm i @fortawesome/fontawesome-free
-2. adicionado angular.json styles 
-
+    - npm i @fortawesome/fontawesome-free
+    -  adicionado angular.json styles 
   - [x] PopperJS
-1. npm i @popperjs/core
-
+- npm i @popperjs/core
   - [x] DatePicker Jquery
-1. CDN 
-
+- CDN 
   - [x] ngx-mask
-1. npm i ngx-mask
-2. adicionado ao shared
-
+    - npm i ngx-mask
+    -  adicionado ao shared
 - [x] assets
-  - [x] images
-1. salvo imagens em assets
-
-- [ ] styles
-1. Pasta criando em Shared
-2. Todos os arquivos serão adicionados styles.scss
+    - [x] images
+    - salvo imagens em assets
+- [x] styles
+  - Pasta criando em Shared
+  - Todos os arquivos serão adicionados styles.scss
   - [x] variables
   - [x] restart
   - [x] functions
@@ -56,21 +47,22 @@ ng new mLabs
     - [x] card
     - [x] header
     - [x] footer
-  - [ ] organims
-    - [ ] scroll post
-    - [ ] post preview
-    - [ ] social midia
-- [ ] components 2
-  - [ ] calender
+  - [x] organims
+    - [x] scroll post
+- [x] components
+  - [x] calender
   - [x] emoji
-1. ng g pipe share/pipe/emoji
-2. ng g c share/components/emoji
-3. import e export shared
-  - [ ] header
-  - [ ] footer
-  - [ ] scroll post
-  - [ ] post preview
-  - [ ] social midia
+    - ng g pipe share/pipe/emoji
+    - ng g c share/components/emoji
+    - import e export shared
+  - [x] header
+    - ng g c share/components/header
+  - [x] footer
+    - ng g c share/components/footer
+  - [x] posts
+    - ng g c share/components/posts
+  - [x] social midia
+    - ng g c share/components/social-midia
 - [ ] pages
   - [ ] home
   - [ ] scheduling

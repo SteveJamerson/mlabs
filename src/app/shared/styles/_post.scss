@@ -1,0 +1,71 @@
+app-posts{
+  display: contents;
+}
+.ui-post{
+  @extend .ui-card;
+  color: $gray-800;
+  width: 368px;
+  border: 1px solid #BDBDBD;
+  display: grid;
+  height: 100%;
+  &-preview{
+    width: 500px;
+  }
+  &__header {
+    @extend .ui-card__header;
+    min-height: 60px;
+    border-bottom: 0;
+  }
+  &__body {
+    text-align: left;
+    font-size: 14px;
+    padding: 0;
+    height: 100%;
+    & > *:not(img) {
+      padding: 10px;
+    }
+    & img {
+      width: 100%;
+    }
+  }
+  &-instagram {
+    .ui-post {
+      &__footer{
+        & i{
+          font-size: 22px;
+          &:last-of-type{
+            float: right;
+          }
+          & + i {
+            margin-left: 18px;
+          }
+        }
+        &__text{
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-linkedin {
+    .ui-post {
+      &__footer{
+        padding: 0;
+        & > * {
+          padding: 10px;
+        }
+        &__label{
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid #ddd
+        }
+        & i{
+          font-size: 16px;
+          &.fa-reply{
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+  }
+}

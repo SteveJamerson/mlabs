@@ -7,6 +7,9 @@ import { EmojiPipe } from '../share/pipes/emoji.pipe';
 import { EmojiComponent } from '../share/components/emoji/emoji.component';
 import { HeaderComponent } from '../share/components/header/header.component';
 import { FooterComponent } from '../share/components/footer/footer.component';
+import { CalendarComponent } from '../share/components/calendar/calendar.component';
+import { PostsComponent } from '../share/components/posts/posts.component';
+import { SocialMidiaComponent } from '../share/components/social-midia/social-midia.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import { FooterComponent } from '../share/components/footer/footer.component';
     EmojiComponent,
     HeaderComponent,
     FooterComponent,
+    CalendarComponent,
+    PostsComponent,
+    SocialMidiaComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +37,9 @@ import { FooterComponent } from '../share/components/footer/footer.component';
     EmojiComponent,
     HeaderComponent,
     FooterComponent,
+    CalendarComponent,
+    PostsComponent,
+    SocialMidiaComponent
   ]
 })
 export class SharedModule { }

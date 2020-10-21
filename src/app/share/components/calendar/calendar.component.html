@@ -1,0 +1,27 @@
+<div class="calendar">
+  <div class="calendar__header">
+    <i class="fas fa-chevron-left ui-margin-0"
+      (click)="change(-1)"></i>
+    <label class="calendar__month"> {{ MONTHS[month] }} {{ year }}</label>
+    <i class="fas fa-chevron-right ui-margin-0"
+      (click)="change(+1)"
+    ></i>
+    <span *ngFor="let d of DAYS">{{ d }}</span>
+  </div>
+  <div class="calendar__body">
+    <button
+      *ngFor="let dt of DAYS_TABLE; let i = index"
+      class="calendar__body__button"
+      [class.today]="(dt == TODAY) && (month == MONTH)"
+      [class.active]="(dt == date) && (month == monthActive)"
+      (click)="select(dt)"
+
+      [disabled]="dt == '•'"
+      >{{ dt }}</button>
+  </div>
+  <div class="calendar__footer">
+    <span (click)="reset(-1)">Ontem</span>
+    <span (click)="reset(0)">Hoje</span>
+    <span (click)="reset(1)">Amanhã</span>
+  </div>
+</div>
