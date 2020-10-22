@@ -25,12 +25,6 @@
 
 @media screen and (max-width: 600px) {
   .ui-scroll {
-    z-index: $zindex-modal;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     overflow-y: auto;
     background: $white;

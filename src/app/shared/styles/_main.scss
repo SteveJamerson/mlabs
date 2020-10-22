@@ -1,8 +1,9 @@
 .ui-main {
-  margin: auto 1rem;
+  margin: auto;
+  max-width: 1400px;
 
   & .img-home {
-    max-width: 460px;
+    width: 460px;
     display: flex;
     margin: auto;
     margin-bottom: 2rem;
@@ -16,13 +17,13 @@
   grid-gap: 10px;
   grid-template-areas: "redes data preview preview""post post preview preview""upload upload preview preview";
 
-  @include breakpoints-max('xl') {
+  @include breakpoint-down('xl') {
     grid-template: auto auto auto auto/1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas: "redes redes preview preview""data data preview preview""post post preview preview""upload upload preview preview";
   }
 
-  @include breakpoints-max('lg') {
+  @include breakpoint-down('lg') {
     display: block;
   }
 
@@ -45,12 +46,12 @@
   &__preview {
     grid-area: preview;
     width: fit-content;
-    @include breakpoints('sm') {
+    @include breakpoint-down('sm') {
       display: none !important;
     }
     &__button {
       display: none;
-      @include breakpoints('sm') {
+      @include breakpoint-down('sm') {
         display: block;
       }
     }

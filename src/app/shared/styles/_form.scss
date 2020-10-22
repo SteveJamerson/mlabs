@@ -24,6 +24,9 @@
   & + .ui-form{
     margin-left: 1rem;
   }
+  &:invalid{
+    border-color: $red;
+  }
 }
 
 .ui-text-post, .ui-form-icon {

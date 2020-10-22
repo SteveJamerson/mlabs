@@ -16,7 +16,7 @@
   & .ui-avatar__content{
     display: none;
   }
-  @include breakpoints-max('sm') {
+  @include breakpoint-up('sm') {
     &__logo {
       display: block;
     }

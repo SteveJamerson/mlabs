@@ -153,14 +153,15 @@ $zindex-modal: 1050;
 $zindex-popover: 1060;
 $zindex-tooltip: 1070;
 
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
+$sm: 600px;
+$md: 800px;
+$lg: 1000px;
 $xl: 1200px;
 
 $breakpoints: ();
 $breakpoints: map-merge(
   (
+    'xs': 0,
     'sm': $sm,
     'md': $md,
     'lg': $lg,

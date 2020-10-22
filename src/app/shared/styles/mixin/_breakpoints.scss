@@ -1,23 +1,11 @@
-@mixin breakpoints($size) {
-  @if $size == 'sm' {
-    @media (max-width: 599px) { @content; }
-  } @else if $size == 'md' {
-    @media (min-width: 600px) { @content; }
-  } @else if $size == 'lg' {
-    @media (min-width: 1000px) { @content; }
-  } @else if $size == 'xl' {
-    @media (min-width: 1200px) { @content; }
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
   }
 }
 
-@mixin breakpoints-max($size) {
-  @if $size == 'sm' {
-    @media (min-width: 599px) { @content; }
-  } @else if $size == 'md' {
-    @media (max-width: 600px) { @content; }
-  } @else if $size == 'lg' {
-    @media (max-width: 1000px) { @content; }
-  } @else if $size == 'xl' {
-    @media (max-width: 1200px) { @content; }
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
   }
 }

@@ -5,7 +5,6 @@
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
-  vertical-align: middle;
   user-select: none;
   color: $body-color;
   background-color: transparent;
@@ -45,7 +44,7 @@
   &-lg {
     height: $bottom-width * 4.5;
     min-width: 184px;
-    @include breakpoints('sm') {
+    @include breakpoint-up('sm') {
       height: $bottom-width * 3.6;
       min-width: 109px;
     }
