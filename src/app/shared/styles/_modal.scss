@@ -6,6 +6,7 @@
   left: 0;
   z-index: $zindex-modal;
   overflow: hidden;
+
   &.show {
     display: block;
     overflow-x: hidden;
@@ -13,6 +14,7 @@
     animation: fade 1s forwards,
       slideUp 1s cubic-bezier(.3, 1, .3, 1.3) forwards;
   }
+
   &-dialog {
     display: flex;
     flex-direction: column;
@@ -33,13 +35,14 @@
     background-color: #FAFAFA;
     border: $border-width solid transparent;
     border-radius: $border-radius;
-    @include breakpoint-down('sm') {
+
+    @include breakpoint-down('md') {
       width: 100%;
     }
 
     &.ui-modal-auto {
       @include size(100%);
-      margin: 0!important;
+      margin: 0 !important;
     }
   }
 
@@ -53,6 +56,12 @@
   &-body {
     position: relative;
     padding: $padding-size;
+    &-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 
   &-footer {
@@ -63,17 +72,26 @@
   }
 
   &-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    &.show{
+      display: flex;
+    }
+    & .ui-modal-dialog {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      padding: $padding-size;
+    }
   }
+
   &-scroll {
     @include breakpoint-up('md') {
       &.show {
         display: none;
       }
     }
+
     @include breakpoint-down('md') {
       .ui-modal-header {
         position: sticky;
@@ -82,6 +100,7 @@
         background-color: $white;
         border-bottom: 1px solid $gray-200;
       }
+
       .ui-modal-body {
         background: $white;
       }

@@ -8,12 +8,13 @@ import { EmojiComponent } from './components/emoji/emoji.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { PostsComponent } from './components/posts/posts.component';
 import { SocialMidiaComponent } from './components/social-midia/social-midia.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { TableComponent } from './components/table/table.component';
 import { ContainerComponent } from './components/container/container.component';
+import { InstagramComponent } from './components/posts/instagram/instagram.component';
+import { LinkedinComponent } from './components/posts/linkedin/linkedin.component';
 
 
 @NgModule({
@@ -23,11 +24,12 @@ import { ContainerComponent } from './components/container/container.component';
     HeaderComponent,
     FooterComponent,
     CalendarComponent,
-    PostsComponent,
     SocialMidiaComponent,
     UploadImageComponent,
     TableComponent,
-    ContainerComponent
+    ContainerComponent,
+    InstagramComponent,
+    LinkedinComponent,
   ],
   imports: [
     CommonModule,
@@ -46,11 +48,12 @@ import { ContainerComponent } from './components/container/container.component';
     HeaderComponent,
     FooterComponent,
     CalendarComponent,
-    PostsComponent,
     SocialMidiaComponent,
     UploadImageComponent,
     TableComponent,
-    ContainerComponent
+    ContainerComponent,
+    InstagramComponent,
+    LinkedinComponent,
   ]
 })
 export class SharedModule { }

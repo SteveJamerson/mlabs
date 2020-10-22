@@ -82,7 +82,32 @@
     <div class="ui-card ui-post-preview grid-agendamento-preview">
       <div class="ui-card-header">Visualização do post</div>
       <div class="ui-card-body">
-        <app-posts [data]="formScheduling"></app-posts>
+        <div class="ui-scroll">
+          <div class="ui-scroll-content" #scroll>
+            <ng-container
+              *ngIf="
+                preview.social.length > 0 &&
+                  formScheduling.get('image').value != '';
+                else noPost
+              "
+            >
+              <div class="ui-scroll-item" *ngFor="let post of preview.social">
+                <app-instagram *ngIf="post.name == 'Instagram'"></app-instagram>
+                <app-linkedin *ngIf="post.name == 'Linkedin'"></app-linkedin>
+              </div>
+            </ng-container>
+
+            <ng-template #noPost>
+              <div class="ui-post-none">
+                <label
+                  >Aguardando conteúdo. Informe os canais e as mídias desejadas
+                  para visualização.</label
+                >
+                <img src="./../assets/images/post-preview-none.png" alt="" />
+              </div>
+            </ng-template>
+          </div>
+        </div>
       </div>
     </div>
     <div class="grid-agendamento-preview-button">
@@ -124,33 +149,59 @@
           <span>Visualização do post</span>
           <i class="fas fa-times" (click)="modalService.hide('#preview')"></i>
         </div>
-        <div class="ui-modal-body ui-modal-center">
-          <app-posts [data]="formScheduling"></app-posts>
+        <div class="ui-modal-body ui-modal-body-center">
+          <div class="ui-scroll">
+            <div class="ui-scroll-content" #scroll>
+              <ng-container
+                *ngIf="
+                  preview.social.length > 0 &&
+                    formScheduling.get('image').value != '';
+                  else noPost
+                "
+              >
+                <div class="ui-scroll-item" *ngFor="let post of preview.social">
+                  <app-instagram
+                    *ngIf="post.name == 'Instagram'"
+                  ></app-instagram>
+                  <app-linkedin *ngIf="post.name == 'Linkedin'"></app-linkedin>
+                </div>
+              </ng-container>
+
+              <ng-template #noPost>
+                <div class="ui-post-none">
+                  <label
+                    >Aguardando conteúdo. Informe os canais e as mídias
+                    desejadas para visualização.</label
+                  >
+                  <img src="./../assets/images/post-preview-none.png" alt="" />
+                </div>
+              </ng-template>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="ui-modal ui-modal-sm" tabindex="-1" id="modal">
+  <div class="ui-modal ui-modal-center" tabindex="-1" id="modal">
     <div class="ui-modal-dialog">
       <div class="ui-modal-content">
         <div class="ui-modal-header"></div>
-        <div class="ui-modal-body ui-modal-center">
+        <div class="ui-modal-body ui-modal-body-center">
           <img
-          src="./../assets/images/Screenshot from 2020-09-11 13-17-02 1.png"
-          alt=""
-        />
-        <span>Agendado com sucesso!</span>
+            src="./../assets/images/Screenshot from 2020-09-11 13-17-02 1.png"
+            alt=""
+          />
+          <span>Agendado com sucesso!</span>
         </div>
         <div class="ui-modal-footer">
-
-        <button
-        (click)="modalService.hide('#modal')"
-        class="ui-button ui-button-primary ui-button-lg"
-        routerLink="/agendamento/lista"
-      >
-        OK
-      </button>
+          <button
+            (click)="modalService.hide('#modal')"
+            class="ui-button ui-button-primary ui-button-lg"
+            routerLink="/agendamento/lista"
+          >
+            OK
+          </button>
         </div>
       </div>
     </div>

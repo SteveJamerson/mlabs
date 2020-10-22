@@ -22,22 +22,23 @@
   }
 }
 
-
-@media screen and (max-width: 600px) {
-  .ui-scroll {
-    z-index: $zindex-modal;
-    display: flex;
-    overflow-y: auto;
-    background: $white;
-    -webkit-overflow-scrolling: touch;
-    &-content {
-      flex-direction: column;
-      width: 100%;
-      overflow: auto;
+@media screen and (max-width: 800px) {
+  .ui-modal-scroll.show {
+    .ui-scroll {
+      z-index: $zindex-modal;
+      display: flex;
+      overflow-y: auto;
+      background: $white;
       -webkit-overflow-scrolling: touch;
-    }
-    &-item{
-      margin: 1rem auto;
+      &-content {
+        flex-direction: column;
+        width: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      &-item{
+        margin: 1rem auto;
+      }
     }
   }
 }

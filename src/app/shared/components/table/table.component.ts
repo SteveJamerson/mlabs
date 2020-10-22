@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { PopperService } from 'src/app/core/services/popper.service';
 
 @Component({
@@ -6,17 +8,24 @@ import { PopperService } from 'src/app/core/services/popper.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('scroll') scroll: ElementRef<HTMLElement>;
+
+  mousedown;
+  mousemove;
+  mouseup;
+
   schedulingList = [
     {
       "id": 1,
       "social": [
         {
-          brand: 'instagram',
+          name: 'Instagram',
           icon: 'instagram'
         },
         {
-          brand: 'linkedin',
+          name: 'Linkedin',
           icon: 'linkedin-in'
         }
       ],
@@ -32,7 +41,7 @@ export class TableComponent implements OnInit {
       "id": 2,
       "social": [
         {
-          brand: 'instagram',
+          name: 'Instagram',
           icon: 'instagram'
         },
       ],
@@ -48,7 +57,7 @@ export class TableComponent implements OnInit {
       "id": 3,
       "social": [
         {
-          brand: 'linkedin',
+          name: 'Linkedin',
           icon: 'linkedin-in'
         }
       ],
@@ -64,7 +73,7 @@ export class TableComponent implements OnInit {
       "id": 4,
       "social": [
         {
-          brand: 'linkedin',
+          name: 'Linkedin',
           icon: 'linkedin-in'
         }
       ],
@@ -80,7 +89,7 @@ export class TableComponent implements OnInit {
       "id": 4,
       "social": [
         {
-          brand: 'instagram',
+          name: 'Instagram',
           icon: 'instagram'
         }
       ],
@@ -99,6 +108,26 @@ export class TableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void{
+
+    document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);
+    this.mousedown = fromEvent(this.scroll.nativeElement, 'mousedown')
+    this.mouseup = fromEvent(document, 'mouseup')
+    this.mousemove = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup))
+
+    this.mousedown.subscribe(
+      (down: MouseEvent) => {
+        let x = down.screenX;
+        this.mousemove
+          .subscribe((move: MouseEvent) => {
+            let offsetx = x - move.screenX;
+            console.log(offsetx);
+            this.scroll.nativeElement.scrollBy({ left: offsetx })
+          })
+      }
+    )
   }
 
 }

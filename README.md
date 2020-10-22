@@ -56,3 +56,5 @@
   - [x] modal
   - [x] popper
 - [x] functions
+- [x] refactoring
+    - [x] styles

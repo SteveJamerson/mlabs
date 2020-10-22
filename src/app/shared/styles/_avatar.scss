@@ -6,7 +6,7 @@
     vertical-align: middle;
     border-radius: 50%;
   }
-  &-{
+  &-content{
     margin-left: 16px;
     @extend %ui-display-flex, %ui-flex-direction-column;
   }

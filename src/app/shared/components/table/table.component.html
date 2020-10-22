@@ -12,27 +12,54 @@
     <tbody>
       <tr *ngFor="let post of schedulingList; let i = index">
         <th>
-          <button *ngFor="let media of post.social" [class]="'ui-button-icon ui-brands-'+media.brand+'-bg'">
-            <i [class]="'fab fa-'+media.icon"></i>
+          <button
+            *ngFor="let media of post.social"
+            [class]="
+              'ui-button-icon ui-brands-' +
+              media.name.toLocaleLowerCase() +
+              '-bg'
+            "
+          >
+            <i [class]="'fab fa-' + media.icon"></i>
           </button>
         </th>
         <td>
           <img [src]="post.image" alt="" />
         </td>
         <td>
-          {{post.texto}}
+          {{ post.texto }}
         </td>
         <td>
-          <!-- <span class="link" (click)="popperService.toggle('.link', 'preview', 'bottom')">Preview</span> -->
+          <span
+            class="link"
+            (click)="popperService.toggle('.link', '#preview', 'bottom')"
+            >Preview</span
+          >
         </td>
         <td>
-          <span [class]="'ui-status ui-status-'+post.status.color"> {{post.status.name}} </span>
+          <span [class]="'ui-status ui-status-' + post.status.color">
+            {{ post.status.name }}
+          </span>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-<app-posts [data]="schedulingList"
-  id="preview"
-  class="ui-popper">
-</app-posts>
+<div id="preview" class="ui-popper">
+  <div class="ui-card ui-post-preview ui-post-preview-table">
+    <div class="ui-card-header">Visualização do post</div>
+    <div class="ui-card-body">
+      <div class="ui-scroll">
+        <div class="ui-scroll-content" #scroll>
+          <div
+            class="ui-scroll-item"
+            *ngFor="let post of schedulingList[0].social"
+          >
+            <app-instagram *ngIf="post.name == 'Instagram'"></app-instagram>
+            <app-linkedin *ngIf="post.name == 'Linkedin'"></app-linkedin>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
