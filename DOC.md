@@ -80,4 +80,9 @@
     - ng g c pages/scheduling
   - [x] list
     - ng g c pages/scheduling-list
+- [x] services
+  - [x] modal
+    - ng g s core/services/modal
+  - [x] popper
+    - ng g s core/services/popper
 - [ ] functions
