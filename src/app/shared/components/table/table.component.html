@@ -5,13 +5,14 @@
         <th scope="col">Redes sociais</th>
         <th scope="col">Mídia</th>
         <th scope="col">Texto</th>
+        <th scope="col">Ações</th>
         <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let post of schedulingList; let i = index">
         <th>
-          <button *ngFor="let media of post.midias" [class]="'ui-button-icon ui-brands-'+media.brand+'-bg'">
+          <button *ngFor="let media of post.social" [class]="'ui-button-icon ui-brands-'+media.brand+'-bg'">
             <i [class]="'fab fa-'+media.icon"></i>
           </button>
         </th>
@@ -22,9 +23,16 @@
           {{post.texto}}
         </td>
         <td>
+          <!-- <span class="link" (click)="popperService.toggle('.link', 'preview', 'bottom')">Preview</span> -->
+        </td>
+        <td>
           <span [class]="'ui-status ui-status-'+post.status.color"> {{post.status.name}} </span>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+<app-posts [data]="schedulingList"
+  id="preview"
+  class="ui-popper">
+</app-posts>

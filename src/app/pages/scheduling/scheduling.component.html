@@ -1,21 +1,21 @@
 <app-container [agendar]="formValid">
   <form [formGroup]="formScheduling" class="grid-agendamento">
-    <div class="ui-card grid-agendamento__redes" id="">
-      <div class="ui-card__header">
+    <div class="ui-card grid-agendamento-redes" id="">
+      <div class="ui-card-header">
         <label for="">Redes sociais</label>
       </div>
-      <div class="ui-card__body">
+      <div class="ui-card-body">
         <app-social-midia
           [brands]="this.formScheduling.get('social').value"
           (social)="socialEvent($event)"
         ></app-social-midia>
       </div>
     </div>
-    <div class="ui-card grid-agendamento__data" id="" formGroupName="date_time">
-      <div class="ui-card__header">
+    <div class="ui-card grid-agendamento-data" id="" formGroupName="date_time">
+      <div class="ui-card-header">
         <label for="">Data de publicação</label>
       </div>
-      <div class="ui-card__body">
+      <div class="ui-card-body">
         <input
           #data
           type="text"
@@ -25,7 +25,7 @@
           class="ui-form"
           (click)="
             popperService.toggle(
-              '.grid-agendamento__data',
+              '.grid-agendamento-data',
               '#calendar',
               'bottom'
             )
@@ -44,11 +44,11 @@
         />
       </div>
     </div>
-    <div class="ui-card grid-agendamento__post" id="">
-      <div class="ui-card__header">
+    <div class="ui-card grid-agendamento-post" id="">
+      <div class="ui-card-header">
         <label for="">Texto do post</label>
       </div>
-      <div class="ui-card__body">
+      <div class="ui-card-body">
         <div class="ui-text-post">
           <textarea
             #textPost
@@ -68,24 +68,24 @@
         </div>
       </div>
     </div>
-    <div class="ui-card grid-agendamento__upload" id="">
-      <div class="ui-card__header">
+    <div class="ui-card grid-agendamento-upload" id="">
+      <div class="ui-card-header">
         <label for="">Upload de imagem</label>
       </div>
-      <div class="ui-card__body">
+      <div class="ui-card-body">
         <app-upload-image
           [upload]=""
           (outUpload)="outUpload($event)"
         ></app-upload-image>
       </div>
     </div>
-    <div class="ui-card ui-post-preview grid-agendamento__preview">
-      <div class="ui-card__header">Visualização do post</div>
-      <div class="ui-card__body">
+    <div class="ui-card ui-post-preview grid-agendamento-preview">
+      <div class="ui-card-header">Visualização do post</div>
+      <div class="ui-card-body">
         <app-posts [data]="formScheduling"></app-posts>
       </div>
     </div>
-    <div class="grid-agendamento__preview__button">
+    <div class="grid-agendamento-preview-button">
       <button
         type="button"
         class="ui-button ui-button-secondary ui-button-lg ui-button-full"
@@ -117,7 +117,7 @@
     class="ui-popper"
   ></app-emoji>
 
-  <div class="ui-modal show" tabindex="-1" id="preview">
+  <div class="ui-modal ui-modal-scroll" tabindex="-1" id="preview">
     <div class="ui-modal-dialog">
       <div class="ui-modal-content ui-modal-auto">
         <div class="ui-modal-header">
@@ -126,8 +126,6 @@
         </div>
         <div class="ui-modal-body ui-modal-center">
           <app-posts [data]="formScheduling"></app-posts>
-        </div>
-        <div class="ui-modal-footer">
         </div>
       </div>
     </div>

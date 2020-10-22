@@ -34,13 +34,12 @@ export class PostsComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.dataLoop = {...this.data.value, social: this.data.value.social.filter(n => n.actived)}
-    console.log(this.dataLoop);
   }
 
   ngAfterViewInit(): void {
+
     this.data$ = this.data.valueChanges.subscribe(i => {
       this.dataLoop = {...this.data.value, social: i.social.filter(n => n.actived)}
-      console.log(this.dataLoop);
     });
 
     document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);

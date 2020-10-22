@@ -23,6 +23,7 @@ export class SchedulingComponent implements AfterViewInit {
 
   socialValid: boolean = false
   formValid: boolean = false
+  preview = [];
 
   get date_time(): FormControl {
     return this.formScheduling.get('date_time') as FormControl
@@ -37,9 +38,12 @@ export class SchedulingComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.formScheduling.valueChanges.subscribe(e => {
       const valid = this.formScheduling.value;
-      console.log(valid);
+      this.formValid = valid.image != '' && valid.date_time.date != '' && valid.date_time.time != '' && this.socialValid;
+      this.preview = {...e.value, social: e.social.filter(n => n.actived)}
+      console.log(e);
 
-      this.formValid = valid.image != '' && valid.date_time.date != '' && valid.date_time.time != '' && this.socialValid
+      console.log(this.preview);
+
     })
   }
 
@@ -49,7 +53,7 @@ export class SchedulingComponent implements AfterViewInit {
   }
 
   outUpload(e) {
-    this.formScheduling.get('image').setValue(e)
+    this.formScheduling.get('image').setValue(e.target.files.item(0))
   }
 
   log(e){

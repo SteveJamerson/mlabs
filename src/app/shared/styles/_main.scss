@@ -1,7 +1,9 @@
 .ui-main {
   margin: auto;
   max-width: 1400px;
-
+  @include breakpoint-down('sm') {
+    margin: auto 1rem;
+  }
   & .img-home {
     width: 460px;
     display: flex;
@@ -11,48 +13,42 @@
 }
 
 .grid-agendamento {
-  margin: 1rem;
-  display: grid;
-  grid-template: auto auto auto /1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  grid-template-areas: "redes data preview preview""post post preview preview""upload upload preview preview";
-
-  @include breakpoint-down('xl') {
-    grid-template: auto auto auto auto/1fr 1fr 1fr 1fr;
+  display: block;
+  @include breakpoint-up('lg') {
+    margin: 1rem;
+    display: grid;
+    grid-template: auto auto auto /1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    grid-template-areas: "redes redes preview preview""data data preview preview""post post preview preview""upload upload preview preview";
+    grid-template-areas: "redes data preview preview""post post preview preview""upload upload preview preview";
   }
 
-  @include breakpoint-down('lg') {
-    display: block;
-  }
-
-  &__redes {
+  &-redes {
     grid-area: redes;
     width: fit-content;
   }
-  &__data {
+  &-data {
     grid-area: data;
     width: fit-content;
   }
-  &__post {
+  &-post {
     grid-area: post;
     width: fit-content;
   }
-  &__upload {
+  &-upload {
     grid-area: upload;
     width: fit-content;
   }
-  &__preview {
+  &-preview {
     grid-area: preview;
     width: fit-content;
-    @include breakpoint-down('sm') {
-      display: none !important;
+    display: block;
+    @include breakpoint-down('md') {
+      display: none!important;
     }
-    &__button {
-      display: none;
-      @include breakpoint-down('sm') {
-        display: block;
+    &-button {
+      display: block;
+      @include breakpoint-up('md') {
+        display: none;
       }
     }
   }

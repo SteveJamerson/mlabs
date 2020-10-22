@@ -1,6 +1,6 @@
 .ui-scroll {
   @include size(auto, 100%);
-  &__content {
+  &-content {
     display: flex;
     overflow-y: hidden;
     overflow-x: auto;
@@ -13,7 +13,7 @@
       cursor: grabbing;
     }
   }
-  &__item{
+  &-item{
     flex: none;
     @include size(auto);
     pointer-events: none;
@@ -25,17 +25,18 @@
 
 @media screen and (max-width: 600px) {
   .ui-scroll {
+    z-index: $zindex-modal;
     display: flex;
     overflow-y: auto;
     background: $white;
     -webkit-overflow-scrolling: touch;
-    &__content {
+    &-content {
       flex-direction: column;
       width: 100%;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
-    &__item{
+    &-item{
       margin: 1rem auto;
     }
   }

@@ -5,6 +5,7 @@
   color: $body-color;
   overflow: auto;
   min-width: 772px;
+
   & thead {
     background-color: $white;
 
@@ -39,14 +40,14 @@
     text-align: left;
   }
 
-  & td:nth-last-of-type(2) {
+  & td:nth-of-type(2) {
     white-space: pre-line;
     text-align: left;
   }
 }
 
-@media screen and (max-width: 772px) {
-  .ui-table-responsive {
+.ui-table-responsive {
+  @include breakpoint-down('sm') {
     overflow-x: auto;
     display: block;
     width: 100%;

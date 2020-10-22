@@ -153,6 +153,9 @@ $zindex-modal: 1050;
 $zindex-popover: 1060;
 $zindex-tooltip: 1070;
 
+$padding-size: 8px;
+$margin-size: 8px;
+
 $sm: 600px;
 $md: 800px;
 $lg: 1000px;
@@ -168,8 +171,6 @@ $breakpoints: map-merge(
     'xl': $xl,
   )
   , $breakpoints);
-
-
 
 $body-color: $gray-900;
 $body-bg: $gray-100;

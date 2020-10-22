@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopperService } from 'src/app/core/services/popper.service';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +10,7 @@ export class TableComponent implements OnInit {
   schedulingList = [
     {
       "id": 1,
-      "midias": [
+      "social": [
         {
           brand: 'instagram',
           icon: 'instagram'
@@ -29,7 +30,7 @@ export class TableComponent implements OnInit {
     },
     {
       "id": 2,
-      "midias": [
+      "social": [
         {
           brand: 'instagram',
           icon: 'instagram'
@@ -45,7 +46,7 @@ export class TableComponent implements OnInit {
     },
     {
       "id": 3,
-      "midias": [
+      "social": [
         {
           brand: 'linkedin',
           icon: 'linkedin-in'
@@ -61,7 +62,7 @@ export class TableComponent implements OnInit {
     },
     {
       "id": 4,
-      "midias": [
+      "social": [
         {
           brand: 'linkedin',
           icon: 'linkedin-in'
@@ -77,7 +78,7 @@ export class TableComponent implements OnInit {
     },
     {
       "id": 4,
-      "midias": [
+      "social": [
         {
           brand: 'instagram',
           icon: 'instagram'
@@ -93,7 +94,9 @@ export class TableComponent implements OnInit {
     },
   ].filter(i => i.status.name == "Agendado");
 
-  constructor() { }
+  constructor(
+    public popperService: PopperService
+  ) { }
 
   ngOnInit(): void {
   }

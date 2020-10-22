@@ -14,6 +14,7 @@
   &:disabled, &-icon:disabled {
     background: $gray-200 !important;
     border-color: $gray-400 !important;
+    color: $gray-400 !important;
   }
   &-primary {
     background-color: $primary;
@@ -44,7 +45,7 @@
   &-lg {
     height: $bottom-width * 4.5;
     min-width: 184px;
-    @include breakpoint-up('sm') {
+    @include breakpoint-down('sm') {
       height: $bottom-width * 3.6;
       min-width: 109px;
     }
@@ -63,6 +64,12 @@
     font-size: $font-size;
     vertical-align: text-bottom;
     background: transparent;
+    &-group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
     &-lg {
       @include size($bottom-width * 4);
       font-size: $font-size-lg;
@@ -71,6 +78,7 @@
       color: $white;
     }
   }
+
 
   @each $color,
   $value in $theme-colors {

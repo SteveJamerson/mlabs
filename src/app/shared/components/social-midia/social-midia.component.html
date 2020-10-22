@@ -1,9 +1,11 @@
-<button
-  class="ui-button-icon ui-gradient-bg"
-  (click)="check(i)"
-  [class.actived]="brand.actived"
-  *ngFor="let brand of brands; let i = index"
-  [disabled]="brand.disabled"
->
-  <i [class]="'fab fa-' + brand.icon"></i>
-</button>
+<div class="ui-button-icon-group">
+  <button
+    class="ui-button-icon ui-gradient-bg"
+    (click)="check(i)"
+    [class.actived]="brand.actived"
+    *ngFor="let brand of brands; let i = index"
+    [disabled]="brand.disabled"
+  >
+    <i [class]="'fab fa-' + brand.icon"></i>
+  </button>
+</div>

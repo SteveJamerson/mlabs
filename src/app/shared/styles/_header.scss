@@ -10,20 +10,20 @@
   position: sticky;
   top: 0;
   z-index: 1040;
-  &__logo {
+  &-logo {
     display: none;
   }
-  & .ui-avatar__content{
+  & .ui-avatar-content{
     display: none;
   }
   @include breakpoint-up('sm') {
-    &__logo {
+    &-logo {
       display: block;
     }
-    & .ui-avatar__content{
+    & .ui-avatar-content{
       display: block;
     }
-    &__menu {
+    &-menu {
       display: none!important;
     }
   }
