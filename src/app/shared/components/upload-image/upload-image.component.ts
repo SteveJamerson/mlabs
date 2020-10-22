@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-upload-image',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadImageComponent implements OnInit {
 
-  image: string = '';
+  @Input() upload: string = '';
+  @Output() outUpload = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeUpload(e) {
+    this.upload = e.target.files.item(0).name
+    this.outUpload.emit(e)
   }
 
 }

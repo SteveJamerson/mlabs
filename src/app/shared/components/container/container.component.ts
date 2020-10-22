@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ContainerComponent implements OnInit {
 
   @Input() footer: boolean = true;
+  @Input() agendar;
 
   constructor() { }
 

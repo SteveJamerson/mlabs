@@ -1,6 +1,6 @@
 <button
   class="ui-button-icon ui-gradient-bg"
-  (click)="brands[i].actived = !brands[i].actived"
+  (click)="check(i)"
   [class.actived]="brand.actived"
   *ngFor="let brand of brands; let i = index"
   [disabled]="brand.disabled"

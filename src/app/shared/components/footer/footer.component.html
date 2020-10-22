@@ -3,5 +3,11 @@
   <button class="ui-button ui-button-primary-outline ui-button-lg">
     Resumo
   </button>
-  <button routerLink="/agendamento/lista" class="ui-button ui-button-primary ui-button-lg">Agendar</button>
+  <button
+    class="ui-button ui-button-primary ui-button-lg"
+    (click)="modalService.toggle('#modal')"
+    [disabled]="!agendar"
+  >
+    Agendar
+  </button>
 </footer>

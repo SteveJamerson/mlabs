@@ -55,4 +55,4 @@
 - [x] services
   - [x] modal
   - [x] popper
-- [ ] functions
+- [x] functions

@@ -91,7 +91,7 @@ export class TableComponent implements OnInit {
         "color": "alert"
       }
     },
-  ]
+  ];
 
   constructor() { }
 

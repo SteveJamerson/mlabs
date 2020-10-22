@@ -1,8 +1,8 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { AfterViewInit, Component } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
+import { Brands } from '../../shared/models/models';
 
 @Component({
   selector: 'app-scheduling',
@@ -11,54 +11,51 @@ import { PopperService } from 'src/app/core/services/popper.service';
 })
 export class SchedulingComponent implements AfterViewInit {
 
-  @ViewChild('scroll') scroll: ElementRef<HTMLElement>;
+  formScheduling = this.fb.group({
+    "social": this.fb.array(Brands.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)),
+    "date_time": this.fb.group({
+      "date": [''],
+      "time": ['']
+    }),
+    "text": [''],
+    "image": ['']
+  })
 
-  schedules = [
-    {
-      "id": 1,
-      "social_network_key": [2, 3],
-      "media": "https://images.unsplash.com/photo-1600025282051-ec0c6bf3137a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "text": "Texto do post",
-      "publication_date": "2020-09-10T15:59:23.922Z",
-      "status_key": 1
-    },
-    {
-      "id": 2,
-      "social_network_key": [2],
-      "media": "https://images.unsplash.com/photo-1600025282051-ec0c6bf3137a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "text": "Texto do post",
-      "publication_date": "2020-09-08T15:59:23.922Z",
-      "status_key": 3
-    }
-  ];
+  socialValid: boolean = false
+  formValid: boolean = false
 
-  mousedown;
-  mousemove;
-  mouseup;
+  get date_time(): FormControl {
+    return this.formScheduling.get('date_time') as FormControl
+  }
 
   constructor(
     public popperService: PopperService,
-    public modalService: ModalService
+    public modalService: ModalService,
+    private fb: FormBuilder
   ) { }
 
   ngAfterViewInit(): void {
-    document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);
+    this.formScheduling.valueChanges.subscribe(e => {
+      const valid = this.formScheduling.value;
+      console.log(valid);
 
-    this.mousedown = fromEvent(this.scroll.nativeElement, 'mousedown')
-    this.mouseup = fromEvent(document, 'mouseup')
-    this.mousemove = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup))
-
-    this.mousedown.subscribe(
-      (down: MouseEvent) => {
-        let x = down.screenX;
-        this.mousemove
-          .subscribe((move: MouseEvent) => {
-            let offsetx = x - move.screenX;
-            console.log(offsetx);
-            this.scroll.nativeElement.scrollBy({ left: offsetx })
-          })
-      }
-    )
+      this.formValid = valid.image != '' && valid.date_time.date != '' && valid.date_time.time != '' && this.socialValid
+    })
   }
+
+  socialEvent(e) {
+    this.formScheduling.get('social').setValue(e);
+    this.socialValid = e.filter(i => i.actived).length > 0;
+  }
+
+  outUpload(e) {
+    this.formScheduling.get('image').setValue(e)
+  }
+
+  log(e){
+    console.log(e);
+
+  }
+
 
 }

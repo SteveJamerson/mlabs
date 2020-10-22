@@ -94,6 +94,7 @@ export class CalendarComponent implements AfterViewInit{
 
   inputView(date) {
     this.inputDate.value = date.toJSON().slice(0, 10).split('-').reverse().join('/');
+    this.inputDate.click();
   }
 
   ngAfterViewInit() {

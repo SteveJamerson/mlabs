@@ -85,4 +85,4 @@
     - ng g s core/services/modal
   - [x] popper
     - ng g s core/services/popper
-- [ ] functions
+- [x] functions

@@ -1,20 +1,23 @@
-<app-container>
-  <div class="grid-agendamento">
+<app-container [agendar]="formValid">
+  <form [formGroup]="formScheduling" class="grid-agendamento">
     <div class="ui-card grid-agendamento__redes" id="">
       <div class="ui-card__header">
         <label for="">Redes sociais</label>
       </div>
       <div class="ui-card__body">
-        <app-social-midia></app-social-midia>
+        <app-social-midia
+          [brands]="this.formScheduling.get('social').value"
+          (social)="socialEvent($event)"
+        ></app-social-midia>
       </div>
     </div>
-    <div class="ui-card grid-agendamento__data" id="">
+    <div class="ui-card grid-agendamento__data" id="" formGroupName="date_time">
       <div class="ui-card__header">
         <label for="">Data de publicação</label>
       </div>
       <div class="ui-card__body">
         <input
-          #date
+          #data
           type="text"
           pattern="^([0-2]?[0-9]|3[0-1])/([0]?[0-9]|1[0-2])/(20[0-9]{2})$"
           mask="00/00/0000"
@@ -27,8 +30,9 @@
               'bottom'
             )
           "
+          formControlName="date"
         />
-        <input type="time" class="ui-form" />
+        <input type="time" class="ui-form" formControlName="time" />
       </div>
     </div>
     <div class="ui-card grid-agendamento__post" id="">
@@ -38,13 +42,18 @@
       <div class="ui-card__body">
         <div class="ui-text-post">
           <textarea
-            #post
+            #textPost
             type="text"
             class="ui-form"
             placeholder="Aqui vai o texto descritivo desse post"
             rows="4"
+            formControlName="text"
           ></textarea>
-          <button class="ui-button" id="buttonEmoji" (click)="popperService.toggle('#buttonEmoji', '#emoji', 'bottom')">
+          <button
+            class="ui-button"
+            id="buttonEmoji"
+            (click)="popperService.toggle('#buttonEmoji', '#emoji', 'bottom')"
+          >
             <i class="far fa-smile"></i>
           </button>
         </div>
@@ -55,68 +64,16 @@
         <label for="">Upload de imagem</label>
       </div>
       <div class="ui-card__body">
-        <app-upload-image></app-upload-image>
+        <app-upload-image
+          [upload]=""
+          (outUpload)="outUpload($event)"
+        ></app-upload-image>
       </div>
     </div>
     <div class="ui-card ui-post-preview grid-agendamento__preview">
       <div class="ui-card__header">Visualização do post</div>
       <div class="ui-card__body">
-        <div class="ui-scroll">
-          <div class="ui-scroll__content" #scroll>
-            <div class="ui-scroll__item">
-              <div class="ui-post ui-post-linkedin" id="">
-                <div class="ui-post__header">
-                  <div class="ui-avatar">
-                    <button class="ui-button-icon ui-brands-linkedin-bg">
-                      <i class="fab fa-linkedin"></i>
-                    </button>
-                    <div class="ui-avatar__content">
-                      <span>Steve Jamerson</span>
-                      <small>06 de Setembro</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui-post__body ui-flex-direction-column">
-                  <span class="ui-post__footer__text"
-                    >Aqui vai o texto descritivo desse post</span
-                  >
-                  <img src="./../assets/images/post.png" alt="" />
-                </div>
-                <div class="ui-post__footer">
-                  <small class="ui-post__footer__label">5 comentários</small>
-                  <i class="far fa-thumbs-up"></i>
-                  <i class="far fa-comment-alt"></i>
-                  <i class="fas fa-reply"></i>
-                </div>
-              </div>
-            </div>
-            <div class="ui-scroll__item">
-              <div class="ui-post ui-post-instagram" id="">
-                <div class="ui-post__header">
-                  <div class="ui-avatar">
-                    <button class="ui-button-icon ui-brands-instagram-gradient">
-                      <i class="fab fa-instagram"></i>
-                    </button>
-                    <div class="ui-avatar__content">
-                      <span>Steve Jamerson</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui-post__body ui-flex-direction-column">
-                  <img src="./../assets/images/post.png" alt="" />
-                </div>
-                <div class="ui-post__footer">
-                  <i class="far fa-heart"></i>
-                  <i class="far fa-comment"></i>
-                  <i class="far fa-bookmark"></i>
-                  <span class="ui-post__footer__text"
-                    >Aqui vai o texto descritivo desse post</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-posts [data]="formScheduling"></app-posts>
       </div>
     </div>
     <div class="grid-agendamento__preview__button">
@@ -127,15 +84,37 @@
         Visualizar post
       </button>
     </div>
-  </div>
+  </form>
   <app-calendar
     class="ui-popper"
     id="calendar"
-    [inputDate]="date"
+    [inputDate]="data"
+    (selectDate)="
+      date_time
+        .get('date')
+        .setValue($event.toJSON().slice(0, 10).split('-').reverse().join('/'))
+    "
   ></app-calendar>
-  <app-emoji
-  [textarea]="post"
-  id="emoji"
-  class="ui-popper"
-  ></app-emoji>
+  <app-emoji [textarea]="textPost" (selectEmoji)="formScheduling.get('text').setValue(formScheduling.get('text').value + $event.alt)" id="emoji" class="ui-popper"></app-emoji>
+
+  <div class="ui-modal" id="modal">
+    <div class="ui-modal__content">
+      <div class="ui-modal__header"></div>
+      <div class="ui-modal__body">
+        <img
+          src="./../assets/images/Screenshot from 2020-09-11 13-17-02 1.png"
+          alt=""
+        />
+        <span>Agendado com sucesso!</span>
+      </div>
+      <div class="ui-modal__footer">
+        <button
+          class="ui-button ui-button-primary ui-button-lg"
+          routerLink="/agendamento/lista"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
 </app-container>
