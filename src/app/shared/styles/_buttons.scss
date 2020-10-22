@@ -1,5 +1,5 @@
 .ui-button {
-  display: inline-block;
+  display: block;
   @include size(($bottom-width * 4), fit-content);
   line-height: $button-line-height;
   font-family: $font-family;
@@ -12,7 +12,7 @@
   border: $border-width solid transparent;
   border-radius: $border-radius;
   cursor: pointer;
-  &:disabled {
+  &:disabled, &-icon:disabled {
     background: $gray-200 !important;
     border-color: $gray-400 !important;
   }
@@ -63,6 +63,7 @@
     border-radius: 50%;
     font-size: $font-size;
     vertical-align: text-bottom;
+    background: transparent;
     &-lg {
       @include size($bottom-width * 4);
       font-size: $font-size-lg;

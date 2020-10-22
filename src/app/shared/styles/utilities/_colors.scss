@@ -17,7 +17,7 @@
     }
     &-gradient {
       border-color: $value!important;
-      background: map-get($brands-bg, $brands);
+      background: map-get($brands-bg, $brands)!important;
     }
   }
 }
@@ -32,15 +32,15 @@
 }
 
 .ui-gradient-bg {
-  &:hover {
-    background: color-adjust($orange, 13, 90, 150);
-    border: $border-width solid color-adjust($orange, -3, 6, -18);
-    color: color-adjust($orange, -3, 6, -18);
+  &:hover:not(:disabled) {
+    background: color-adjust($orange, 13, 90, 150)!important;
+    border: $border-width solid color-adjust($orange, -3, 6, -18)!important;
+    color: color-adjust($orange, -3, 6, -18)!important;
   }
-  &:active, &.actived {
-    border: $border-width solid color-adjust($orange, -3, 6, -18);
-    background: $icon-bg-gradient;
-    color: $white;
+  &:active:not(:disabled), &.actived:not(:disabled) {
+    border: $border-width solid color-adjust($orange, -3, 6, -18)!important;
+    background: $icon-bg-gradient!important;
+    color: $white!important;
   }
 }
 

@@ -50,7 +50,8 @@
   - [x] organims
     - [x] scroll post
 - [x] components
-  - [x] calender
+  - [x] calendar
+    - ng g c share/components/calendar
   - [x] emoji
     - ng g pipe share/pipe/emoji
     - ng g c share/components/emoji
@@ -63,9 +64,20 @@
     - ng g c share/components/posts
   - [x] social midia
     - ng g c share/components/social-midia
-- [ ] pages
-  - [ ] home
-  - [ ] scheduling
-    - [ ] components
-      - [ ] list
+  - [x] container
+    - ng g c shared/components/container
+  - [x] table
+    - ng g c shared/components/table
+  - [x] list
+    - ng g c shared/components/list
+  - [x] upload image
+    - ng g c shared/components/upload-image
+- [x] pages
+    - ng g m pages --routing
+  - [x] home
+    - ng g c pages/home
+  - [x] scheduling
+    - ng g c pages/scheduling
+  - [x] list
+    - ng g c pages/scheduling-list
 - [ ] functions

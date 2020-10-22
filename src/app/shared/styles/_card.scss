@@ -2,9 +2,10 @@
   display: block;
   @include size(auto, 100%);
   background: $white;
+  border-bottom: $border-width solid $gray-200;
   border-radius: $border-radius;
   font-size: $font-size;
-  margin-bottom: 8px;
+  margin-bottom: 11px;
   & > * {
     padding: 10px;
   }

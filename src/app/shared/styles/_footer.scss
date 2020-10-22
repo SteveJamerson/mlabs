@@ -1,17 +1,9 @@
-.ui-footer{
-  @include size(67px, 100%);
-  @extend %ui-flex-end;
+.ui-footer {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 .5rem;
+  height: 67px;
   background: $white;
-  padding: 10px 52px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: $zindex-fixed;
-  @include breakpoints('sm') {
-    padding: 0 20px;
-  }
-  &.ui-sticky{
-    position: sticky;
-    z-index: $zindex-sticky;
-  }
 }

@@ -1,0 +1,117 @@
+<app-container>
+  <div class="grid-agendamento">
+    <div class="ui-card grid-agendamento__redes" id="">
+      <div class="ui-card__header">
+        <label for="">Redes sociais</label>
+      </div>
+      <div class="ui-card__body">
+        <app-social-midia></app-social-midia>
+      </div>
+    </div>
+    <div class="ui-card grid-agendamento__data" id="">
+      <div class="ui-card__header">
+        <label for="">Data de publicação</label>
+      </div>
+      <div class="ui-card__body">
+        <input type="date" class="ui-form" />
+        <input type="time" class="ui-form" />
+      </div>
+    </div>
+    <div class="ui-card grid-agendamento__post" id="">
+      <div class="ui-card__header">
+        <label for="">Texto do post</label>
+      </div>
+      <div class="ui-card__body">
+        <div class="ui-text-post">
+          <textarea
+            #text
+            type="text"
+            class="ui-form"
+            placeholder="Aqui vai o texto descritivo desse post"
+            rows="4"
+          ></textarea>
+          <button class="ui-button" id="buttonEmoji">
+            <i class="far fa-smile"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="ui-card grid-agendamento__upload" id="">
+      <div class="ui-card__header">
+        <label for="">Upload de imagem</label>
+      </div>
+      <div class="ui-card__body">
+        <app-upload-image></app-upload-image>
+      </div>
+    </div>
+    <div class="ui-card ui-post-preview grid-agendamento__preview">
+      <div class="ui-card__header">Visualização do post</div>
+      <div class="ui-card__body">
+        <div class="ui-scroll">
+          <div class="ui-scroll__content" #scroll>
+            <div class="ui-scroll__item">
+              <div class="ui-post ui-post-linkedin" id="">
+                <div class="ui-post__header">
+                  <div class="ui-avatar">
+                    <button class="ui-button-icon ui-brands-linkedin-bg">
+                      <i class="fab fa-linkedin"></i>
+                    </button>
+                    <div class="ui-avatar__content">
+                      <span>Steve Jamerson</span>
+                      <small>06 de Setembro</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui-post__body ui-flex-direction-column">
+                  <span class="ui-post__footer__text"
+                    >Aqui vai o texto descritivo desse post</span
+                  >
+                  <img src="./../assets/images/post.png" alt="" />
+                </div>
+                <div class="ui-post__footer">
+                  <small class="ui-post__footer__label">5 comentários</small>
+                  <i class="far fa-thumbs-up"></i>
+                  <i class="far fa-comment-alt"></i>
+                  <i class="fas fa-reply"></i>
+                </div>
+              </div>
+            </div>
+            <div class="ui-scroll__item">
+              <div class="ui-post ui-post-instagram" id="">
+                <div class="ui-post__header">
+                  <div class="ui-avatar">
+                    <button class="ui-button-icon ui-brands-instagram-gradient">
+                      <i class="fab fa-instagram"></i>
+                    </button>
+                    <div class="ui-avatar__content">
+                      <span>Steve Jamerson</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui-post__body ui-flex-direction-column">
+                  <img src="./../assets/images/post.png" alt="" />
+                </div>
+                <div class="ui-post__footer">
+                  <i class="far fa-heart"></i>
+                  <i class="far fa-comment"></i>
+                  <i class="far fa-bookmark"></i>
+                  <span class="ui-post__footer__text"
+                    >Aqui vai o texto descritivo desse post</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-agendamento__preview__button">
+      <button
+        type="button"
+        class="ui-button ui-button-secondary ui-button-lg ui-button-full"
+      >
+        Visualizar post
+      </button>
+    </div>
+  </div>
+</app-container>

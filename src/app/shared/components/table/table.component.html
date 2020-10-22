@@ -1,0 +1,30 @@
+<div class="ui-table-responsive">
+  <table class="ui-table">
+    <thead>
+      <tr>
+        <th scope="col">Redes sociais</th>
+        <th scope="col">Mídia</th>
+        <th scope="col">Texto</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of schedulingList; let i = index">
+        <th>
+          <button *ngFor="let media of post.midias" [class]="'ui-button-icon ui-brands-'+media.brand+'-bg'">
+            <i [class]="'fab fa-'+media.icon"></i>
+          </button>
+        </th>
+        <td>
+          <img [src]="post.image" alt="" />
+        </td>
+        <td>
+          {{post.texto}}
+        </td>
+        <td>
+          <span [class]="'ui-status ui-status-'+post.status.color"> {{post.status.name}} </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

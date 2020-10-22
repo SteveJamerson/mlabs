@@ -1,0 +1,16 @@
+<div class="ui-upload-image">
+  <label for="upload-file" class="ui-upload-image__label">
+    <i class="fas fa-cloud-upload-alt"></i>
+    <span
+      >{{
+        image != ""
+          ? image
+          : "Arraste e solte uma imagem aqui ou clique no botão abaixo"
+      }}
+    </span>
+    <button class="ui-button ui-button-primary-outline ui-button-sm">
+      Pesquisar imagens
+    </button>
+  </label>
+  <input type="file" accept="image/jpg,image/png" id="upload-file" />
+</div>

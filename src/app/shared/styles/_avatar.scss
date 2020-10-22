@@ -7,9 +7,6 @@
     border-radius: 50%;
   }
   &__content{
-    @include breakpoints('sm') {
-      display: none;
-    }
     margin-left: 16px;
     @extend %ui-display-flex, %ui-flex-direction-column;
   }

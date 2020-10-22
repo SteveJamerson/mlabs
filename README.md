@@ -69,9 +69,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - [x] footer
   - [x] post
   - [x] social midia
-- [ ] pages
+- [x] pages
   - [x] home
-  - [ ] scheduling
-    - [ ] components
-      - [ ] list
+  - [x] scheduling
+    - [x] components
+      - [x] list
 - [ ] functions

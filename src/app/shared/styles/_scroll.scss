@@ -5,7 +5,7 @@
     overflow-y: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    // -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     outline: none;
     cursor: grab;
@@ -23,16 +23,26 @@
 }
 
 
-// @media screen and (max-width: 772px) {
-//   .ui-scroll {
-//     // @extend %ui-absolute-total;
-
-//     &__content {
-//       flex-direction: column;
-//       align-items: center;
-//     }
-//     &__item{
-//       margin-right: auto;
-//     }
-//   }
-// }
+@media screen and (max-width: 600px) {
+  .ui-scroll {
+    z-index: $zindex-modal;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    overflow-y: auto;
+    background: $white;
+    -webkit-overflow-scrolling: touch;
+    &__content {
+      flex-direction: column;
+      width: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    &__item{
+      margin: 1rem auto;
+    }
+  }
+}

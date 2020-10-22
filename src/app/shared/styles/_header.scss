@@ -1,15 +1,37 @@
 .ui-header{
-  @include size(80px, 100%);
-  @extend %ui-flex-between;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 80px;
   background: $white;
-  padding: 16px 40px;
-  @include breakpoints('sm') {
-    padding: 0 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  &__logo {
+    display: none;
   }
-  &.ui-sticky{
-    position: sticky;
-    left: 0;
-    top: 0;
-    z-index: $zindex-sticky;
+  & .ui-avatar__content{
+    display: none;
   }
+  @include breakpoints-max('sm') {
+    &__logo {
+      display: block;
+    }
+    & .ui-avatar__content{
+      display: block;
+    }
+    &__menu {
+      display: none!important;
+    }
+  }
+}
+
+app-header{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
 }

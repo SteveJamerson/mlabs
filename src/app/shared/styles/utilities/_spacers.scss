@@ -1,8 +1,19 @@
 $types-spacers: margin, padding;
 $directions: top, bottom, left, right;
 
+.ui-margin-x-auto, .ui-padding-x-auto {
+  margin: 0 auto;
+}
+
+.ui-margin-y-auto, .ui-padding-y-auto {
+  margin: auto 0;
+}
+
 @each $type in $types-spacers {
   @each $spacer, $value in $multiples-spacers {
+    .ui-#{$type}-#{$spacer} {
+      #{$type}: #{$value};
+    }
     .ui-#{$type}-x-#{$spacer} {
       #{$type}: #{$value} 0rem;
     }

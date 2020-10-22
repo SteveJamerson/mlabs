@@ -1,6 +1,6 @@
-<header class="ui-header ui-sticky">
-  <img src="./../assets/images/mlabs.png" alt="" *ngIf="isMobile; else menu"/>
-  <ng-template #menu> <i class="fas fa-bars"></i> </ng-template>
+<header class="ui-header">
+  <img routerLink="" src="./../assets/images/mlabs.png" alt="" class="ui-header__logo"/>
+  <i class="fas fa-bars ui-header__menu"></i>
   <div class="ui-avatar">
     <img  src="./../assets/images/photo.png" alt="" class="ui-avatar-img" />
     <div class="ui-avatar__content">

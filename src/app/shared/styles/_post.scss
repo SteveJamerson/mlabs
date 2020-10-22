@@ -9,7 +9,7 @@ app-posts{
   display: grid;
   height: 100%;
   &-preview{
-    width: 500px;
+    min-width: 500px;
   }
   &__header {
     @extend .ui-card__header;

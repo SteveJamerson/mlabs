@@ -9,16 +9,9 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class HeaderComponent implements AfterContentInit {
 
-  isMobile: boolean = false;
-
   constructor() { }
 
   ngAfterContentInit(): void {
-    const isHandset$ = fromEvent(window, 'resize')
-    isHandset$.subscribe(
-      (e: any) => this.isMobile = (e.target.screen.width >= 600)
-    )
-
   }
 
 }

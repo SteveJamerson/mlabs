@@ -1,8 +1,8 @@
 *,
 *::before,
 *::after {
-  box-sizing:border-box;
-  outline: none!important;
+  box-sizing: border-box;
+  outline: none !important;
 }
 
 html {
@@ -32,7 +32,15 @@ h6 {
   margin-bottom: 1rem;
 }
 
-p, label {
+h1 {font-size: xx-large};
+h2 {font-size: x-large};
+h3 {font-size: x-large};
+h4 {font-size: larger};
+h5 {font-size: large};
+h6 {font-size: medium};
+
+p,
+label {
   margin-top: 0;
   margin-bottom: .5rem;
 }
@@ -41,18 +49,22 @@ small {
   font-size: 70%;
 }
 
-a, .link {
+a,
+.link {
   color: $link-color;
   text-decoration: $link-decoration;
   background-color: transparent;
+
   &:hover {
     color: $link-color--hover;
     text-decoration: $link-decoration--hover;
   }
+
   &:not([href]):not([class]) {
     color: inherit;
     text-decoration: none;
-    &:hover{
+
+    &:hover {
       color: inherit;
       text-decoration: none;
     }
@@ -95,9 +107,10 @@ table {
   border-collapse: collapse;
 }
 
-.ui-popper{
+.ui-popper {
   display: none;
   z-index: 1000;
+
   &.show {
     display: block;
   }

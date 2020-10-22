@@ -10,6 +10,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { SocialMidiaComponent } from './components/social-midia/social-midia.component';
+import { Routes, RouterModule } from '@angular/router';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { TableComponent } from './components/table/table.component';
+import { ContainerComponent } from './components/container/container.component';
 
 
 @NgModule({
@@ -20,13 +24,17 @@ import { SocialMidiaComponent } from './components/social-midia/social-midia.com
     FooterComponent,
     CalendarComponent,
     PostsComponent,
-    SocialMidiaComponent
+    SocialMidiaComponent,
+    UploadImageComponent,
+    TableComponent,
+    ContainerComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -39,7 +47,10 @@ import { SocialMidiaComponent } from './components/social-midia/social-midia.com
     FooterComponent,
     CalendarComponent,
     PostsComponent,
-    SocialMidiaComponent
+    SocialMidiaComponent,
+    UploadImageComponent,
+    TableComponent,
+    ContainerComponent
   ]
 })
 export class SharedModule { }
