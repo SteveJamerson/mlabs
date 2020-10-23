@@ -189,7 +189,7 @@
       <!-- O campo de data deverá respeitar o formato "DD/MM/AAAA" -->
       <label>DatePicker</label>
       <input
-        #data
+        #docData
         id="calendarInput"
         type="text"
         pattern="^([0-2]?[0-9]|3[0-1])/([0]?[0-9]|1[0-2])/(20[0-9]{2})$"
@@ -218,7 +218,7 @@
   <app-calendar
     class="ui-popper"
     id="calendar"
-    [inputDate]="data"
+    [inputDate]="docData"
   ></app-calendar>
 
   <section class="ui-card">
@@ -228,7 +228,7 @@
     <div class="ui-card-body">
       <div class="ui-text-post">
         <textarea
-          #textPost
+          #docTextPost
           type="text"
           class="ui-form"
           placeholder="Aqui vai o texto descritivo desse post"
@@ -244,7 +244,7 @@
       </div>
     </div>
   </section>
-  <app-emoji [textarea]="textPost" id="emoji" class="ui-popper"></app-emoji>
+  <app-emoji [textarea]="docTextPost" id="emoji" class="ui-popper"></app-emoji>
   <section class="ui-card">
     <div class="ui-card-header">
       <label for="">Upload de imagem</label>
