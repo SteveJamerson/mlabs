@@ -1,7 +1,7 @@
 .ui-main {
   margin: auto;
   max-width: 1400px;
-  @include breakpoint-down('sm') {
+  @include breakpoint-down('lg') {
     margin: auto 1rem;
   }
   & .img-home {
@@ -9,6 +9,9 @@
     display: flex;
     margin: auto;
     margin-bottom: 2rem;
+  }
+  & .section-agendamento-lista {
+    margin-top: 100px;
   }
 }
 

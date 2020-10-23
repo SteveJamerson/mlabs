@@ -1,6 +1,7 @@
 <app-container [agendar]="formValid">
+  <!-- FORM -->
   <form [formGroup]="formScheduling" class="grid-agendamento">
-    <div class="ui-card grid-agendamento-redes" id="">
+    <section class="ui-card grid-agendamento-redes" id="">
       <div class="ui-card-header">
         <label for="">Redes sociais</label>
       </div>
@@ -10,12 +11,13 @@
           (social)="socialEvent($event)"
         ></app-social-midia>
       </div>
-    </div>
-    <div class="ui-card grid-agendamento-data" id="" formGroupName="date_time">
+    </section>
+    <section class="ui-card grid-agendamento-data" id="" formGroupName="date_time">
       <div class="ui-card-header">
         <label for="">Data de publicação</label>
       </div>
       <div class="ui-card-body">
+        <!-- O campo de data deverá respeitar o formato "DD/MM/AAAA" -->
         <input
           #data
           type="text"
@@ -33,6 +35,7 @@
           formControlName="date"
           inputmode="numeric"
         />
+        <!-- O campo de hora deverá respeitar o formato "HH:MM" -->
         <input
           type="text"
           placeholder="HH:MM"
@@ -43,8 +46,8 @@
           inputmode="numeric"
         />
       </div>
-    </div>
-    <div class="ui-card grid-agendamento-post" id="">
+    </section>
+    <section class="ui-card grid-agendamento-post" id="">
       <div class="ui-card-header">
         <label for="">Texto do post</label>
       </div>
@@ -67,19 +70,21 @@
           </button>
         </div>
       </div>
-    </div>
-    <div class="ui-card grid-agendamento-upload" id="">
+    </section>
+    <!-- Fazer upload de somente 1 imagem -->
+    <section class="ui-card grid-agendamento-upload" id="">
       <div class="ui-card-header">
         <label for="">Upload de imagem</label>
       </div>
       <div class="ui-card-body">
         <app-upload-image
           [upload]=""
-          (outUpload)="outUpload($event)"
+          (outUpload)="uploadEvent($event)"
         ></app-upload-image>
       </div>
-    </div>
-    <div class="ui-card ui-post-preview grid-agendamento-preview">
+    </section>
+    <!-- Ao selecionar a rede social, deverá aparecer uma simulação de como ficará esse post na área "Visualização do post" -->
+    <section class="ui-card ui-post-preview grid-agendamento-preview">
       <div class="ui-card-header">Visualização do post</div>
       <div class="ui-card-body">
         <div class="ui-scroll">
@@ -109,8 +114,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="grid-agendamento-preview-button">
+    </section>
+    <!-- Enquanto não houver uma rede social, data e hora selecionadas o botão "Agendar" deverá estar desabilitado -->
+    <section class="grid-agendamento-preview-button">
       <button
         type="button"
         class="ui-button ui-button-secondary ui-button-lg ui-button-full"
@@ -119,8 +125,10 @@
       >
         Visualizar post
       </button>
-    </div>
+    </section>
   </form>
+
+  <!-- POPPERS -->
   <app-calendar
     class="ui-popper"
     id="calendar"
@@ -142,6 +150,8 @@
     class="ui-popper"
   ></app-emoji>
 
+
+  <!-- MODALS -->
   <div class="ui-modal ui-modal-scroll" tabindex="-1" id="preview">
     <div class="ui-modal-dialog">
       <div class="ui-modal-content ui-modal-auto">
@@ -182,7 +192,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Ao clicar em agendar, deverá exibir uma caixa de alerta com a informação de sucesso para o usuário e redirecioná-lo para a tela de listagem de agendamento -->
   <div class="ui-modal ui-modal-center" tabindex="-1" id="modal">
     <div class="ui-modal-dialog">
       <div class="ui-modal-content">

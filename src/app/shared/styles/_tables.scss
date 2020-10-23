@@ -12,6 +12,7 @@
     & th {
       text-align: left;
       border-bottom-width: 2px;
+      font-weight: $font-weight;
     }
   }
 
@@ -48,7 +49,9 @@
 
 .ui-table-responsive {
   @include breakpoint-down('sm') {
+    overflow-y: hidden;
     overflow-x: auto;
+    scroll-behavior: smooth;
     display: block;
     width: 100%;
   }

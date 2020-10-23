@@ -39,15 +39,15 @@ $colors: map-merge(('white': $white,
     'positive':$positive,
     'warn':$warn,
     'alert':$alert,
-    'gray-1':$gray-100,
-    'gray-2':$gray-200,
-    'gray-3':$gray-300,
-    'gray-4':$gray-400,
-    'gray-5':$gray-500,
-    'gray-6':$gray-600,
-    'gray-7':$gray-700,
-    'gray-8':$gray-800,
-    'gray-9':$gray-900,
+    'gray-100':$gray-100,
+    'gray-200':$gray-200,
+    'gray-300':$gray-300,
+    'gray-400':$gray-400,
+    'gray-500':$gray-500,
+    'gray-600':$gray-600,
+    'gray-700':$gray-700,
+    'gray-800':$gray-800,
+    'gray-900':$gray-900,
   ), $colors);
 
 $primary: $blue;
@@ -181,11 +181,7 @@ $text-light: $white;
 $font-size: 16px;
 $font-size-lg: $font-size * 1.5;
 $font-weight: 500;
-$font-family: Poppins,
-Roboto,
-'Segoe UI',
-Tahoma,
-sans-serif;
+$font-family: Poppins, sans-serif;
 
 $input-line-height: 1.5;
 $text-line-height: 21px;

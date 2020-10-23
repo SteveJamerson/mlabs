@@ -5,16 +5,15 @@ app-emoji {
   margin: 0px;
   right: auto;
   bottom: auto;
-
   &::before{
     content: "";
-    @include size(2rem);
+    @include size(15px);
     transform: rotate(45deg);
     background: $white;
     position: relative;
     margin: auto;
     display: block;
-    top: 1rem;
+    top: 7.5px;
     border-top: $border-width solid $gray-800;
     border-left: $border-width solid $gray-800;
   }

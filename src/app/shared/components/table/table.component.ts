@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PopperService } from 'src/app/core/services/popper.service';
 
@@ -12,10 +12,11 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   @ViewChild('scroll') scroll: ElementRef<HTMLElement>;
 
-  mousedown;
-  mousemove;
-  mouseup;
+  mousedown$: Observable<any>;
+  mousemove$: Observable<any>;
+  mouseup$: Observable<any>;
 
+  //A tabela de agendametos deve exibir somente informações do post que acabou de agendar
   schedulingList = [
     {
       "id": 1,
@@ -112,15 +113,16 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void{
 
+    //NÃO DEIXA ARRASTAR A IMAGEM
     document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);
-    this.mousedown = fromEvent(this.scroll.nativeElement, 'mousedown')
-    this.mouseup = fromEvent(document, 'mouseup')
-    this.mousemove = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup))
-
-    this.mousedown.subscribe(
+    //SCROLL EM SLIDE DESKTOP
+    this.mousedown$ = fromEvent(this.scroll.nativeElement, 'mousedown') //EVENTO DE PRESSIONAR
+    this.mouseup$ = fromEvent(document, 'mouseup') //EVENTO DE SOLTAR
+    this.mousemove$ = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup$))  //EVENTO DE MOVER
+    this.mousedown$.subscribe(
       (down: MouseEvent) => {
         let x = down.screenX;
-        this.mousemove
+        this.mousemove$
           .subscribe((move: MouseEvent) => {
             let offsetx = x - move.screenX;
             console.log(offsetx);

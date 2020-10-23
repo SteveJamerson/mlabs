@@ -1,4 +1,4 @@
-## Tasks
+## LISTA DE ATIVIDADES EXECUTADAS PARA CRIAR O PROJETO
 
 - [x] init
   - ng new mLabs
@@ -61,7 +61,10 @@
   - [x] footer
     - ng g c share/components/footer
   - [x] posts
-    - ng g c share/components/posts
+    - [x] instagram
+      - ng g c share/components/posts/instagram
+    - [x] linkedin
+      - ng g c share/components/posts/linkedin
   - [x] social midia
     - ng g c share/components/social-midia
   - [x] container
@@ -86,3 +89,6 @@
   - [x] popper
     - ng g s core/services/popper
 - [x] functions
+- [x] refactoring
+    - [x] styles
+    - [x] components

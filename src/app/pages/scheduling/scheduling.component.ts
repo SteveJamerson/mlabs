@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
@@ -25,9 +25,9 @@ export class SchedulingComponent implements AfterViewInit {
     "image": ['']
   })
 
-  mousedown;
-  mousemove;
-  mouseup;
+  mousedown$: Observable<any>;
+  mousemove$: Observable<any>;
+  mouseup$: Observable<any>;
 
   socialValid: boolean = false
   formValid: boolean = false
@@ -42,27 +42,26 @@ export class SchedulingComponent implements AfterViewInit {
     public modalService: ModalService,
     private fb: FormBuilder
   ) {
-    this.preview =  {...this.formScheduling.value, social: this.formScheduling.value.social.filter(n => n.actived)};
+    // PREVIEW NÃO PODE INICIAR VAZIO
+    this.preview = { ...this.formScheduling.value, social: this.formScheduling.value.social.filter(n => n.actived) };
   }
 
   ngAfterViewInit(): void {
     this.formScheduling.valueChanges.subscribe(e => {
       const valid = this.formScheduling.value;
       this.formValid = valid.image != '' && valid.date_time.date != '' && valid.date_time.time != '' && this.socialValid;
-      this.preview = {...e.value, social: e.social.filter(n => n.actived)};
-
+      this.preview = { ...e.value, social: e.social.filter(n => n.actived) };
     })
-
+    //NÃO DEIXA ARRASTAR A IMAGEM
     document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);
-
-    this.mousedown = fromEvent(this.scroll.nativeElement, 'mousedown')
-    this.mouseup = fromEvent(document, 'mouseup')
-    this.mousemove = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup))
-
-    this.mousedown.subscribe(
+    //SCROLL EM SLIDE DESKTOP
+    this.mousedown$ = fromEvent(this.scroll.nativeElement, 'mousedown') //EVENTO DE PRESSIONAR
+    this.mouseup$ = fromEvent(document, 'mouseup') //EVENTO DE SOLTAR
+    this.mousemove$ = fromEvent(document, 'mousemove').pipe(takeUntil(this.mouseup$))  //EVENTO DE MOVER
+    this.mousedown$.subscribe(
       (down: MouseEvent) => {
         let x = down.screenX;
-        this.mousemove
+        this.mousemove$
           .subscribe((move: MouseEvent) => {
             let offsetx = x - move.screenX;
             console.log(offsetx);
@@ -72,19 +71,12 @@ export class SchedulingComponent implements AfterViewInit {
     )
   }
 
-  socialEvent(e) {
+  socialEvent(e): void{
     this.formScheduling.get('social').setValue(e);
     this.socialValid = e.filter(i => i.actived).length > 0;
   }
 
-  outUpload(e) {
+  uploadEvent(e): void{
     this.formScheduling.get('image').setValue(e.target.files.item(0).name)
   }
-
-  log(e){
-    console.log(e);
-
-  }
-
-
 }
