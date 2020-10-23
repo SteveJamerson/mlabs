@@ -22,10 +22,10 @@
     <tbody>
       <tr *ngFor="let post of schedulingList; let i = index">
         <th>
-          <button
-            type="button"
+          <a
+            role="button"
             *ngFor="let media of post.social"
-            routerLink="/agendamento"
+            href="/agendamento"
             [class]="
               'ui-button-icon ui-gradient-bg ui-brands-' +
               media.name.toLocaleLowerCase() +
@@ -33,7 +33,7 @@
             "
           >
             <i [class]="'fab fa-' + media.icon"></i>
-          </button>
+          </a>
         </th>
         <td>
           <img [src]="post.image" alt="" />

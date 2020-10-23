@@ -64,6 +64,7 @@
       font-size: 30px;
     }
     & label.ui-upload-image-label {
+      height: 100%;
       padding: 21px;
       background: $white;
       border: $border-width dashed $gray-400;

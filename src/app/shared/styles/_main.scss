@@ -18,21 +18,33 @@
 
 .grid-agendamento {
   display: block;
-  @include breakpoint-up('lg') {
+  @include breakpoint-up('md') {
+    margin: 1rem;
+    display: grid;
+    grid-template: auto auto auto auto / 1fr 1fr 1fr;
+    grid-gap: $theme-size * 3;
+    grid-template-areas: "redes preview preview" "data preview preview" "upload preview preview""post post post";
+  }
+  @include breakpoint-up('xl') {
     margin: 1rem;
     display: grid;
     grid-template: auto auto auto /1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: $theme-size * 3;
     grid-template-areas: "redes data preview preview""post post preview preview""upload upload preview preview";
   }
 
   &-redes {
     grid-area: redes;
     width: fit-content;
+    min-width: 320px;
   }
   &-data {
     grid-area: data;
     width: fit-content;
+    min-width: 320px;
+    & .ui-card-body {
+      align-items: center;
+    }
   }
   &-post {
     grid-area: post;
@@ -45,9 +57,9 @@
   &-preview {
     grid-area: preview;
     width: fit-content;
-    display: block;
-    @include breakpoint-down('md') {
-      display: none!important;
+    display: none!important;
+    @include breakpoint-up('md') {
+      display: flex!important;
     }
     &-button {
       display: block;
