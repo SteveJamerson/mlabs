@@ -1,9 +1,10 @@
 <footer class="ui-footer">
-  <button routerLink="" class="ui-button ui-button-tertiary">Cancelar</button>
-  <button class="ui-button ui-button-primary-outline ui-button-lg">
+  <button routerLink="" type="button" class="ui-button ui-button-tertiary">Cancelar</button>
+  <button type="button" class="ui-button ui-button-primary-outline ui-button-lg">
     Resumo
   </button>
   <button
+    type="button"
     class="ui-button ui-button-primary ui-button-lg"
     (click)="modalService.toggle('#modal')"
     [disabled]="!agendar"

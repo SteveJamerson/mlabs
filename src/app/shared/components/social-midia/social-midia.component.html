@@ -1,6 +1,7 @@
 <div class="ui-button-icon-group">
   <button
     class="ui-button-icon ui-gradient-bg"
+    type="button"
     (click)="check(i)"
     [class.actived]="brand.actived"
     *ngFor="let brand of brands; let i = index"

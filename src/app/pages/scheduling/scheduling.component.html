@@ -1,6 +1,10 @@
 <app-container [agendar]="formValid">
   <!-- FORM -->
-  <form [formGroup]="formScheduling" class="grid-agendamento">
+  <form
+    [formGroup]="formScheduling"
+    class="grid-agendamento"
+    (submit)="$event.preventDefault()"
+  >
     <section class="ui-card grid-agendamento-redes" id="">
       <div class="ui-card-header">
         <label for="">Redes sociais</label>
@@ -12,7 +16,11 @@
         ></app-social-midia>
       </div>
     </section>
-    <section class="ui-card grid-agendamento-data" id="" formGroupName="date_time">
+    <section
+      class="ui-card grid-agendamento-data"
+      id=""
+      formGroupName="date_time"
+    >
       <div class="ui-card-header">
         <label for="">Data de publicação</label>
       </div>
@@ -62,6 +70,7 @@
             formControlName="text"
           ></textarea>
           <button
+            type="button"
             class="ui-button"
             id="buttonEmoji"
             (click)="popperService.toggle('#buttonEmoji', '#emoji', 'bottom')"
@@ -88,7 +97,17 @@
       <div class="ui-card-header">Visualização do post</div>
       <div class="ui-card-body">
         <div class="ui-scroll">
-          <div class="ui-scroll-content" #scroll>
+          <div
+            class="ui-scroll-content"
+            #scrollPost
+            (mousemove)="
+              this.scrollService.scrolling
+                ? this.scrollService.mousemove($event, scrollPost)
+                : ''
+            "
+            (mousedown)="this.scrollService.mousedown($event)"
+            (mouseup)="this.scrollService.mouseup($event)"
+          >
             <ng-container
               *ngIf="
                 preview.social.length > 0 &&
@@ -150,7 +169,6 @@
     class="ui-popper"
   ></app-emoji>
 
-
   <!-- MODALS -->
   <div class="ui-modal ui-modal-scroll" tabindex="-1" id="preview">
     <div class="ui-modal-dialog">
@@ -206,6 +224,7 @@
         </div>
         <div class="ui-modal-footer">
           <button
+            type="button"
             (click)="modalService.hide('#modal')"
             class="ui-button ui-button-primary ui-button-lg"
             routerLink="/agendamento/lista"

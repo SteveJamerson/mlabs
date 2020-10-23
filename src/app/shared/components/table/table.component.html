@@ -1,4 +1,14 @@
-<div class="ui-table-responsive">
+<div
+  class="ui-table-responsive"
+  #table
+  (mousemove)="
+    this.scrollService.scrolling
+      ? this.scrollService.mousemove($event, table)
+      : ''
+  "
+  (mousedown)="this.scrollService.mousedown($event)"
+  (mouseup)="this.scrollService.mouseup($event)"
+>
   <table class="ui-table">
     <thead>
       <tr>
@@ -13,6 +23,7 @@
       <tr *ngFor="let post of schedulingList; let i = index">
         <th>
           <button
+            type="button"
             *ngFor="let media of post.social"
             routerLink="/agendamento"
             [class]="
@@ -52,7 +63,17 @@
     <div class="ui-card-header">Visualização do post</div>
     <div class="ui-card-body">
       <div class="ui-scroll">
-        <div class="ui-scroll-content" #scroll>
+        <div
+          class="ui-scroll-content"
+          #scroll
+          (mousemove)="
+            this.scrollService.scrolling
+              ? this.scrollService.mousemove($event, scroll)
+              : ''
+          "
+          (mousedown)="this.scrollService.mousedown($event)"
+          (mouseup)="this.scrollService.mouseup($event)"
+        >
           <div
             class="ui-scroll-item"
             *ngFor="let post of schedulingList[0].social"

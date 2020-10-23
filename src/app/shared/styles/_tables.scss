@@ -49,12 +49,21 @@
 
 .ui-table-responsive {
   width: 100%;
+  -webkit-touch-callout: none;  /* iPhone OS, Safari */
+  -webkit-user-select: none;    /* Chrome, Safari 3 */
+  -khtml-user-select: none;     /* Safari 2 */
+  -moz-user-select: none;       /* Firefox */
+  -ms-user-select: none;        /* IE10+ */
+  user-select: none;
   @include breakpoint-down('md') {
     overflow-y: hidden;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     display: block;
     width: 100%;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
   }
 }
