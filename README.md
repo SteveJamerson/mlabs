@@ -4,7 +4,7 @@ Projeto desenvolvido para Pessoa Desenvolvedora Front-End Junior - Design System
 ## TESTE
 As especificações e instruções estão [AQUI](https://github.com/mlabssoftware/mlabs-teste/blob/master/front-end/front-end.md)
 
-### GERENCIADOR DE PACOTE
+## GERENCIADOR DE PACOTE
 
   **Obrigatorio**
 
@@ -22,10 +22,13 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
   - Acesse http://localhost:3000/
   ```
 
-#### LISTA DE ATIVIDADES EXECUTADAS PARA CRIAR O PROJETO
+## DEMONSTRAÇÃO
+[AQUI](https://mlabs.stevejamerson.com/)
+
+### LISTA DE ATIVIDADES EXECUTADAS PARA CRIAR O PROJETO
 
 [AQUI](https://github.com/SteveJamerson/mlabs/blob/main/tasks.md)
 
-##### COMPONENTES
+### COMPONENTES
 
 [AQUI](https://mlabs.stevejamerson.com/doc)
