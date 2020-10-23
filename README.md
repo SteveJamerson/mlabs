@@ -31,4 +31,4 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 
 ### COMPONENTES
 
-[AQUI](https://mlabs.stevejamerson.com/doc)
+[AQUI](https://mlabs.stevejamerson.com/components)
