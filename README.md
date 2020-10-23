@@ -1,6 +1,8 @@
 # MLABS
 Projeto desenvolvido para Pessoa Desenvolvedora Front-End Junior - Design System em [mLabs](https://www.mlabs.com.br/)
 
+![Tela Inicial](https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/tela_inicial.png)
+
 ## TESTE
 As especificações e instruções estão [AQUI](https://github.com/mlabssoftware/mlabs-teste/blob/master/front-end/front-end.md)
 
@@ -31,3 +33,7 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 ### COMPONENTES
 
 [AQUI](https://mlabs.stevejamerson.com/components)
+
+#### IMAGENS
+
+<img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/tela_inicial.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/agendamento.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/agendamento2.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/lista_de_agendamento.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/lista_de_agendamento2.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/componentes.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/componentes2.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/componentes3.png" width="250"><img src="https://github.com/SteveJamerson/mlabs/blob/main/src/assets/images/componentes4.png" width="250">
