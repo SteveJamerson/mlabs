@@ -3,14 +3,14 @@ import { fromEvent, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
-import { Brands, Scheduling } from 'src/app/shared/models/models';
+import { Brands, Scheduling } from 'src/app/shared/models/models';;
 
 @Component({
-  selector: 'app-doc',
-  templateUrl: './doc.component.html',
-  styleUrls: ['./doc.component.scss']
+  selector: 'app-components',
+  templateUrl: './components.component.html',
+  styleUrls: ['./components.component.scss']
 })
-export class DocComponent implements AfterViewInit {
+export class ComponentsComponent implements AfterViewInit {
 
   @ViewChild('scrollDoc') scroll: ElementRef<HTMLElement>;
 

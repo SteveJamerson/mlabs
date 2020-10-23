@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DocComponent } from './doc/doc.component';
+import { ComponentsComponent } from './components/components.component';
 import { HomeComponent } from './home/home.component';
 import { SchedulingListComponent } from './scheduling-list/scheduling-list.component';
 import { SchedulingComponent } from './scheduling/scheduling.component';
@@ -25,8 +25,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'doc',
-    component: DocComponent
+    path: 'components',
+    component: ComponentsComponent
   },
 ];
 
