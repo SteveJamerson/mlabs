@@ -18,6 +18,7 @@
 
 .grid-agendamento {
   display: block;
+  padding: $padding-size 0;
   @include breakpoint-up('md') {
     margin: 1rem;
     display: grid;
