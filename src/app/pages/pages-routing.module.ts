@@ -25,7 +25,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'components',
+    path: 'componentes',
     component: ComponentsComponent
   },
 ];

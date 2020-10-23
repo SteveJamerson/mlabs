@@ -1,6 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { fromEvent, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component, Input, OnInit } from '@angular/core';
 import { PopperService } from 'src/app/core/services/popper.service';
 import { ScrollService } from 'src/app/core/services/scroll.service';
 import { Scheduling } from './../../models/models';
@@ -23,8 +21,6 @@ export class TableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.doc);
-
     if(this.doc) {
       this.schedulingList = this.doc;
     }

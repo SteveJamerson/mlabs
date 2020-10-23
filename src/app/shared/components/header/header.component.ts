@@ -1,17 +1,11 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
-import { fromEvent, Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements AfterContentInit {
+export class HeaderComponent {
 
   constructor() { }
-
-  ngAfterContentInit(): void {
-  }
-
 }

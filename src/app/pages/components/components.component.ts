@@ -1,6 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { fromEvent, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component } from '@angular/core';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
 import { ScrollService } from 'src/app/core/services/scroll.service';

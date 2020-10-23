@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-instagram',
   templateUrl: './instagram.component.html',
   styleUrls: ['./instagram.component.scss']
 })
-export class InstagramComponent implements OnInit {
+export class InstagramComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

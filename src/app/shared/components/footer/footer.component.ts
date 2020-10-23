@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalService } from 'src/app/core/services/modal.service';
 
 @Component({
@@ -6,15 +6,12 @@ import { ModalService } from 'src/app/core/services/modal.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
   @Input() agendar = false;
 
   constructor(
     public modalService: ModalService
   ) { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -13,8 +13,6 @@ export class ScrollService {
   mousemove(e, target:HTMLDivElement){
     let offsetx = this.scrollingX - e.screenX;
     target.scrollBy({ left: offsetx });
-    console.log('scrolling');
-
   }
 
   mousedown(e){

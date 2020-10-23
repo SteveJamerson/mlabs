@@ -7,7 +7,6 @@ import { Placement, createPopper } from '@popperjs/core';
 export class PopperService {
 
   create(target, tooltip, placement?: 'bottom') {
-    console.log('create');
     createPopper(
       target,
       tooltip, {

@@ -49,13 +49,12 @@ export class CalendarComponent{
     this.DAYS_TABLE = diasFinais.concat(
       Array(this.valid(date.getMonth() + 1)).fill(1)
         .map((_, n) => n + _))
-      .concat(diasIniciais).slice(0, (day >= 3 ? 42 : 35));
+      .concat(diasIniciais).slice(0, (day > 4 ? 42 : 35));
   }
 
   reset(number) {
     //ONTEM, HOJE OU AMANHÃ
 
-    console.log(this.TODAY);
     //SETANDO A DATA QUE DESEJA
     const reset: number = new Date().setDate(this.TODAY + number);
 
@@ -114,8 +113,6 @@ export class CalendarComponent{
   }
 
   setValue(date) {
-    console.log(date);
-
     this.inputDate.value = date.toJSON().slice(0, 10).split('-').reverse().join('/');
     this.inputDate.click();
   }

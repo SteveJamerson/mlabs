@@ -1,7 +1,5 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component} from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { fromEvent, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
 import { ScrollService } from 'src/app/core/services/scroll.service';
