@@ -63,3 +63,90 @@ export const Brands = [
     "actived": false
   }
 ]
+
+export const Scheduling = [
+  {
+    "id": 1,
+    "social": [
+      {
+        name: 'Instagram',
+        icon: 'instagram'
+      },
+      {
+        name: 'Linkedin',
+        icon: 'linkedin-in'
+      }
+    ],
+    "image": "./../../../../assets/images/Rectangle 12.png",
+    "texto": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    "data": '09/09/2020 às 14:45h',
+    "status": {
+      "name": "Agendado",
+      "color": "success"
+    }
+  },
+  {
+    "id": 2,
+    "social": [
+      {
+        name: 'Instagram',
+        icon: 'instagram'
+      },
+    ],
+    "image": "./../../../../assets/images/Rectangle 13.png",
+    "texto": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    "data": '08/09/2020 às 10:30h',
+    "status": {
+      "name": "Postado",
+      "color": "positive"
+    }
+  },
+  {
+    "id": 3,
+    "social": [
+      {
+        name: 'Linkedin',
+        icon: 'linkedin-in'
+      }
+    ],
+    "image": "./../../../../assets/images/Rectangle 14.png",
+    "texto": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    "data": '08/09/2020 às 10:30h',
+    "status": {
+      "name": "Postado",
+      "color": "positive"
+    }
+  },
+  {
+    "id": 4,
+    "social": [
+      {
+        name: 'Linkedin',
+        icon: 'linkedin-in'
+      }
+    ],
+    "image": "./../../../../assets/images/Rectangle 15.png",
+    "texto": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    "data": '08/09/2020 às 10:30h',
+    "status": {
+      "name": "Postado com ressalvas",
+      "color": "warn"
+    }
+  },
+  {
+    "id": 4,
+    "social": [
+      {
+        name: 'Instagram',
+        icon: 'instagram'
+      }
+    ],
+    "image": "./../../../../assets/images/Rectangle 16.png",
+    "texto": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    "data": '08/09/2020 às 10:30h',
+    "status": {
+      "name": "Não aprovado",
+      "color": "alert"
+    }
+  },
+];

@@ -1,0 +1,21 @@
+
+.doc{
+  display: block;
+  margin: 1rem;
+  & .ui-card {
+    background: #FAFAFA;
+    &-body{
+      align-items: center;
+      @include breakpoint-down('md') {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.doc-post-preview-table {
+  width: 500px!important;
+  @include breakpoint-down('md') {
+    width: 100%!important;
+  }
+}

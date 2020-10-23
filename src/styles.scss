@@ -21,6 +21,7 @@
 @import './app/shared/styles/form';
 @import './app/shared/styles/status';
 @import './app/shared/styles/tables';
+@import './app/shared/styles/utilities/doc';
 
 app-container{
   display: flex;
@@ -35,3 +36,4 @@ app-container{
 app-social-midia, app-upload-image{
   display: contents;
 }
+

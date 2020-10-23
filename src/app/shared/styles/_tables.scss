@@ -48,7 +48,8 @@
 }
 
 .ui-table-responsive {
-  @include breakpoint-down('sm') {
+  width: 100%;
+  @include breakpoint-down('md') {
     overflow-y: hidden;
     overflow-x: auto;
     scroll-behavior: smooth;

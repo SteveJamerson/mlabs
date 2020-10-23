@@ -24,4 +24,8 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 
 #### LISTA DE ATIVIDADES EXECUTADAS PARA CRIAR O PROJETO
 
-[AQUI](https://https://github.com/SteveJamerson/mlabs/blob/main/tasks.md)
+[AQUI](https://github.com/SteveJamerson/mlabs/blob/main/tasks.md)
+
+##### COMPONENTES
+
+[AQUI](https://mlabs.stevejamerson.com/doc)

@@ -14,6 +14,7 @@
         <th>
           <button
             *ngFor="let media of post.social"
+            routerLink="/agendamento"
             [class]="
               'ui-button-icon ui-gradient-bg ui-brands-' +
               media.name.toLocaleLowerCase() +
@@ -31,8 +32,9 @@
         </td>
         <td>
           <span
+            id="linkPreview"
             class="link"
-            (click)="popperService.toggle('.link', '#preview', 'bottom')"
+            (click)="popperService.toggle('#linkPreview', '#preview', 'bottom')"
             >Preview</span
           >
         </td>

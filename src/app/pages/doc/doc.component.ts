@@ -1,40 +1,33 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ModalService } from 'src/app/core/services/modal.service';
 import { PopperService } from 'src/app/core/services/popper.service';
-import { Scheduling } from './../../models/models';
+import { Brands, Scheduling } from 'src/app/shared/models/models';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-doc',
+  templateUrl: './doc.component.html',
+  styleUrls: ['./doc.component.scss']
 })
-export class TableComponent implements OnInit, AfterViewInit {
+export class DocComponent implements AfterViewInit {
 
-  @Input() doc;
+  @ViewChild('scrollDoc') scroll: ElementRef<HTMLElement>;
 
-  @ViewChild('scroll') scroll: ElementRef<HTMLElement>;
+  brands = Brands.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  schedulingList = Scheduling;
 
   mousedown$: Observable<any>;
   mousemove$: Observable<any>;
   mouseup$: Observable<any>;
 
-  //A tabela de agendametos deve exibir somente informações do post que acabou de agendar
-  schedulingList = Scheduling.filter(i => i.status.name == "Agendado");
-
   constructor(
-    public popperService: PopperService
-  ) { }
+    public popperService: PopperService,
+    public modalService: ModalService,
+    ) { }
 
-  ngOnInit(): void {
-    console.log(this.doc);
+  ngAfterViewInit(): void {
 
-    if(this.doc) {
-      this.schedulingList = this.doc;
-    }
-  }
-
-  ngAfterViewInit(): void{
     //NÃO DEIXA ARRASTAR A IMAGEM
     document.querySelectorAll('img').forEach(i => i.ondragstart = () => false);
     //SCROLL EM SLIDE DESKTOP
