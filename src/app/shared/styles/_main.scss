@@ -1,7 +1,7 @@
 .ui-main {
   margin: auto;
-  max-width: 1400px;
-  @include breakpoint-down('lg') {
+  max-width: 1360px;
+  @include breakpoint-down('xl') {
     margin: auto 1rem;
   }
   & .img-home {
@@ -12,6 +12,7 @@
   }
   & .section-agendamento-lista {
     margin-top: 100px;
+    padding: $padding-size * 2;
   }
 }
 
