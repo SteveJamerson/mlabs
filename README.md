@@ -32,7 +32,7 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 
 ### COMPONENTES
 
-[AQUI](https://mlabs.stevejamerson.com/components)
+[AQUI](https://mlabs.stevejamerson.com/componentes)
 
 #### IMAGENS
 
