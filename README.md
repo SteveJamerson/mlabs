@@ -9,8 +9,8 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
   **Obrigatorio**
 
   ```
-  - [NodeJS](https://nodejs.org/en/)
-  - [Angular](https://cli.angular.io/)
+  [NodeJS](https://nodejs.org/en/) 'Versão 12.16.0' ou mais recente. Não recomendável a versão 'Lastest Features'.
+  [Angular](https://cli.angular.io/) 'Versão 9.1.9' ou mais recente.
   ```
 
   **Uso**
