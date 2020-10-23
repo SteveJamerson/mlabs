@@ -8,19 +8,18 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 
   **Obrigatorio**
 
-  ```
-  - [NodeJS](https://nodejs.org/en/)
-  - [Angular](https://cli.angular.io/)
-  ```
+  -  [NodeJS](https://nodejs.org/en/) ```Versão 12.16.0 ou mais recente. Não recomendável a versão Lastest Features.```
+  -  [Angular](https://cli.angular.io/) ```Versão 9.1.9 ou mais recente.```
+  
 
   **Uso**
-  ```
-  - git clone https://github.com/SteveJamerson/mlabs.git ou [download](https://github.com/SteveJamerson/mlabs.git)
-  - npm install
-  - cd ./mlabs
-  - npm serve --open
-  - Acesse http://localhost:3000/
-  ```
+  
+  1. ```git clone https://github.com/SteveJamerson/mlabs.git``` ou [download](https://github.com/SteveJamerson/mlabs.git);
+  2. ```cd mlabs (acessando a pasta);```
+  3. ```npm install;```
+  4. ```npm serve --open;```
+  5. ```Acesse http://localhost:3000/.```
+  
 
 ## DEMONSTRAÇÃO
 [AQUI](https://mlabs.stevejamerson.com/)
@@ -31,4 +30,4 @@ As especificações e instruções estão [AQUI](https://github.com/mlabssoftwar
 
 ### COMPONENTES
 
-[AQUI](https://mlabs.stevejamerson.com/doc)
+[AQUI](https://mlabs.stevejamerson.com/components)
